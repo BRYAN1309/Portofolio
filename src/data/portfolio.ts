@@ -221,6 +221,30 @@ export const personalInfo = {
   email: "alex.chen@example.com",
   phone: "+1 (555) 123-4567",
   website: "https://alexchen.dev",
+  aboutMe: {
+    title: "About Me",
+    description: "I'm a passionate full-stack developer with over 4 years of experience creating digital solutions that make a difference. My journey in tech started with curiosity and has evolved into a deep love for crafting exceptional user experiences.",
+    highlights: [
+      {
+        title: "Problem Solver",
+        description: "I thrive on turning complex challenges into elegant, user-friendly solutions. Every project is an opportunity to learn and innovate."
+      },
+      {
+        title: "Team Collaborator",
+        description: "I believe the best products come from diverse perspectives. I enjoy mentoring junior developers and contributing to open-source communities."
+      },
+      {
+        title: "Continuous Learner",
+        description: "Technology evolves fast, and so do I. I'm always exploring new frameworks, tools, and best practices to stay at the forefront of development."
+      }
+    ],
+    stats: [
+      { label: "Years Experience", value: "4+" },
+      { label: "Projects Completed", value: "50+" },
+      { label: "Happy Clients", value: "30+" },
+      { label: "Coffee Cups", value: "∞" }
+    ]
+  },
   social: {
     github: "https://github.com/alexchen",
     linkedin: "https://linkedin.com/in/alexchen",
