@@ -1,3 +1,5 @@
+import logo from "@/assets/logo.svg"
+import bukapajak from  "@/assets/BukaPajak.png"
 export interface Experience {
   id: number;
   company: string;
@@ -21,10 +23,12 @@ export interface Project {
   title: string;
   description: string;
   technologies: string[];
-  liveUrl?: string;
+  roles: string[];
+  roleDescription: string;   // Single description string you fill in
   githubUrl?: string;
-  image?: string;
+  liveUrl?: string;
   featured: boolean;
+  image?: string;
 }
 
 export interface Certificate {
@@ -50,29 +54,60 @@ export interface Organization {
 export const experiences: Experience[] = [
   {
     id: 1,
-    company: "TechCorp Solutions",
-    position: "Senior Frontend Developer",
-    duration: "2023 - Present",
-    description: "Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern web technologies to improve user experience.",
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"]
+    company: "BNCC Elite Team – Online",
+    position: "Member",
+    duration: "Mar 2025 – Present",
+    description:
+      "Completed full-stack web development training covering React, HTML, CSS, JavaScript, and backend fundamentals. Built responsive, dynamic web apps aligned with software engineering best practices.",
+    technologies: ["React", "HTML", "CSS", "JavaScript", "Backend Fundamentals"],
   },
   {
     id: 2,
-    company: "InnovateLabs",
-    position: "Full Stack Developer",
-    duration: "2021 - 2023",
-    description: "Developed and maintained scalable web applications, collaborated with cross-functional teams, and optimized application performance.",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "AWS"]
+    company: "FINDIT 2025 Hackathon – Universitas Gadjah Mada",
+    position: "Semifinalist",
+    duration: "Mar – Apr 2025",
+    description:
+      "Built a web-based video call platform with real-time AI sign language translation to text and voice. Developed full-stack architecture with real-time communication features.",
+    technologies: ["WebRTC", "AI", "React", "Next.js", "Real-time Communication", "React", "Python"],
   },
   {
     id: 3,
-    company: "StartupHub",
-    position: "Frontend Developer",
-    duration: "2020 - 2021",
-    description: "Built responsive web interfaces, implemented design systems, and worked closely with designers to create pixel-perfect implementations.",
-    technologies: ["Vue.js", "JavaScript", "SCSS", "Webpack", "Firebase"]
-  }
+    company: "LnT Camp – Bootcamp Golang",
+    position: "Participant",
+    duration: "Jul – Aug 2025",
+    description:
+      "Completed an intensive 1-month Golang bootcamp covering core Go programming concepts and backend development. Built RESTful APIs, implemented JWT authentication, database relations, file uploads, and completed a final collaborative project.",
+    technologies: [
+      "Golang",
+      "REST API",
+      "GORM",
+      "MySQL",
+      "JWT Authentication",
+      "Goroutines",
+      "Git Collaboration",
+    ],
+  },
+  {
+    id: 4,
+    company: "Full-Stack Web Development Courses – Udemy (Online)",
+    position: "Student",
+    duration: "Feb 2025 – Jan 2025",
+    description:
+      "Completed a 71.5-hour React, Next.js, Redux, and API integration course. Finished a 36.5-hour Laravel course covering MVC, API development, and tools like Git, Postman, and Laravel Tinker.",
+    technologies: ["React", "Next.js", "Redux", "API Integration", "Laravel", "Git", "Postman"],
+  },
+  {
+    id: 5,
+    company: "Lomba Website Aksara Batak Domain .Id",
+    position: "Finalist",
+    duration: "Jul – Aug 2025",
+    description:
+      "Developed Horasedu, a digital education platform that preserves Batak culture through a modern, interactive approach. Features include LMS with quizzes and exams, interactive mini-games, chatbox, and cultural exploration modules.",
+    technologies: ["Python", "React", "LMS Development", "Interactive Games", "Digital Education", "Supabase", "Ai"],
+  },
 ];
+
+
 
 export const skills: Skill[] = [
   // Frontend
@@ -104,41 +139,76 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard. Built with React, Node.js, and Stripe API.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    githubUrl: "https://github.com/example/ecommerce",
-    liveUrl: "https://demo-store.example.com",
-    featured: true
+    title: "BukaPajak",
+    description:
+      "Web-based platform designed to improve tax transparency and public participation in Indonesia. It leverages blockchain technology, smart contracts, and wallet integration (MetaMask) to ensure transparency, immutability, and accountability in tax-related transactions.",
+    technologies: ["Go", "Supabase", "Ethereum (Testnet)", "Smart Contracts", "REST API", "MetaMask"],
+    roles: ["Backend Engineer"],
+    roleDescription:
+      "Designed hybrid data architecture (Supabase + blockchain), implemented Ethereum smart contracts, integrated MetaMask authentication, built 20+ REST APIs, and developed transaction validation and role-based access systems. Ensured scalability and security for daily transactions.",
+    githubUrl: "https://github.com/example/bukapajak",
+    liveUrl: "https://bukapajak.example.com",
+    featured: true,
+    image: bukapajak
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io", "PostgreSQL"],
-    githubUrl: "https://github.com/example/taskmanager",
-    liveUrl: "https://tasks.example.com",
-    featured: true
+    title: "NextPath",
+    description:
+      "AI-powered career recommendation platform for students, fresh graduates, and job seekers. It provides personalized career paths, goal tracking, and curated articles on industry insights and skill-building.",
+    technologies: ["Laravel", "Flask", "MySQL", "REST API", "AI/ML"],
+    roles: ["Backend Developer"],
+    roleDescription:
+      "Built the backend system using Laravel, integrated Flask-based AI components, designed REST APIs for user goals, article management, and chatbot integration. Ensured smooth communication between frontend, AI chatbot, and database.",
+    githubUrl: "https://github.com/example/nextpath",
+    liveUrl: "https://nextpath.example.com",
+    featured: true,
+    image: "/assets/projects/nextpath.jpg"
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Real-time weather tracking application with interactive maps, forecasting, and location-based alerts using modern APIs.",
-    technologies: ["Vue.js", "JavaScript", "OpenWeather API", "Chart.js"],
-    githubUrl: "https://github.com/example/weather",
-    liveUrl: "https://weather.example.com",
-    featured: false
+    title: "Horasedu",
+    description:
+      "Digital education platform to preserve Batak culture through a modern, interactive LMS. Features Batak language learning modules, folk tales, history, quizzes, final exams, and mini-games.",
+    technologies: ["Node.js", "Express", "PostgreSQL", "REST API"],
+    roles: ["Backend Engineer"],
+    roleDescription:
+      "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
+    githubUrl: "https://github.com/example/horasedu",
+    liveUrl: "https://horasedu.example.com",
+    featured: false,
+    image: "/assets/projects/horasedu.jpg"
   },
   {
     id: 4,
-    title: "Portfolio Website",
-    description: "A responsive portfolio website showcasing projects and skills with smooth animations and modern design principles.",
-    technologies: ["React", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    githubUrl: "https://github.com/example/portfolio",
-    liveUrl: "https://portfolio.example.com",
-    featured: false
+    title: "SignTalk",
+    description:
+      "AI-powered video call platform that translates sign language into text and speech in real time, bridging communication gaps for individuals with hearing or speech disabilities.",
+    technologies: ["React", "Node.js", "WebRTC", "AI/ML", "REST API"],
+    roles: ["Full Stack Developer"],
+    roleDescription:
+      "Developed the frontend UI for real-time video calls, built backend APIs for room/participant management, and integrated AI models for sign language recognition and translation. Delivered an inclusive communication platform.",
+    githubUrl: "https://github.com/example/signtalk",
+    liveUrl: "https://signtalk.example.com",
+    featured: true,
+    image: "/assets/projects/signtalk.jpg"
+  },
+  {
+    id: 5,
+    title: "Compwaste",
+    description:
+      "Food waste management app enabling restaurants to redistribute organic waste to farmers or compost producers. Supports waste classification, location matching, and secure transactions.",
+    technologies: ["Node.js", "Express", "PostgreSQL", "REST API"],
+    roles: ["Backend Developer"],
+    roleDescription:
+      "Designed and developed backend system, managed database, implemented REST APIs, business logic, and deployment. Ensured API reliability, optimized data flows, and supported real-time transactions between sellers and buyers.",
+    githubUrl: "https://github.com/example/compwaste",
+    liveUrl: "https://compwaste.example.com",
+    featured: false,
+    image: "/assets/projects/compwaste.jpg"
   }
 ];
+
 
 export const certificates: Certificate[] = [
   {
@@ -174,48 +244,49 @@ export const certificates: Certificate[] = [
 export const organizations: Organization[] = [
   {
     id: 1,
-    name: "Tech Community Alliance",
-    position: "Lead Organizer",
-    duration: "2022 - Present",
-    description: "Leading a community of 500+ developers, organizing monthly meetups and workshops on emerging technologies.",
+    name: "Bina Nusantara Computer Club (BNCC)",
+    position: "Learning and Activist",
+    duration: "Sep 2023 – August 2024",
+    description: "Actively involved in BNCC Bandung’s organizational and learning activities, contributing to various flagship events and programs.",
     achievements: [
-      "Organized 20+ technical workshops",
-      "Grew community from 50 to 500+ members",
-      "Established partnerships with major tech companies",
-      "Launched mentorship program for junior developers"
+      "Techbinar – Assisted in planning and executing BNCC’s technical webinar, ensuring smooth flow and engaging delivery",
+      "LnT Camp – Managed logistical needs including entry and exit ticket systems for participants",
+      "BNCC Launching – Supported operations and timeline management for BNCC’s launching event",
+      "LnT Trial Class – Coordinated end-to-end execution, including scheduling and team coordination",
+      "TechBlast 2024 – Oversaw event theme development and rundown planning; served as PIC for LnT Trial Class segment",
+      "BNCC Opening Season 2024 – Supported registration of 300+ participants for the Launching 2024 event"
     ]
   },
   {
     id: 2,
-    name: "Open Source Contributors",
-    position: "Core Contributor",
-    duration: "2021 - Present",
-    description: "Contributing to various open-source projects, focusing on developer tools and educational resources.",
+    name: "Bina Nusantara Computer Club (BNCC)",
+    position: "Learning and Training Staff",
+    duration: "August 2024 – September 2025",
+    description: "Appointed as staff for Learning and Training division, focusing on class execution, mentorship, and cross-division event coordination.",
     achievements: [
-      "Contributed to 15+ open source projects",
-      "Maintained popular UI component library (1k+ stars)",
-      "Reviewed 200+ pull requests",
-      "Mentored new contributors"
+      "Main PIC for LnT Class UI/UX, coordinating operations with 30+ participants per session",
+      "Selected Mentor for Leadership Development Program (LDP) 2025, guiding 7 activists",
+      "Coordinator for LnT Camp 2025, overseeing Publication, Design, and Event divisions"
     ]
   },
   {
     id: 3,
-    name: "Code for Community",
-    position: "Volunteer Developer",
-    duration: "2020 - 2022",
-    description: "Developing web applications for non-profit organizations to help digitize their operations and reach.",
+    name: "Formalistic - GDGoC Core Team (GDGoC BINUS Bandung)",
+    position: "Event Organizer, Core Team",
+    duration: "Oct 2024 – Present",
+    description: "Served as event organizer within GDGoC BINUS Bandung core team, focusing on strengthening community engagement through event management.",
     achievements: [
-      "Built websites for 5 non-profit organizations",
-      "Trained volunteers on basic web technologies",
-      "Raised $10,000+ for digital literacy programs",
-      "Established coding bootcamp for underserved communities"
+      "Organized 10+ community and tech events with 30+ participants each",
+      "Handled end-to-end event execution including planning, coordination, and on-site operations",
+      "Contributed to consistent community growth and visibility of GDGoC BINUS Bandung on campus"
     ]
   }
 ];
 
+
 export const personalInfo = {
-  name: "Alex Chen",
-  tagline: "Full Stack Developer & UI/UX Enthusiast",
+  name: "Bryan Thanaya",
+  tagline: "Software Engineer & Artificial Intelligence Enthusiast",
   bio: "Passionate about creating exceptional digital experiences with modern technologies. I specialize in building scalable web applications with a focus on performance, accessibility, and user experience.",
   location: "San Francisco, CA",
   email: "alex.chen@example.com",
@@ -223,7 +294,7 @@ export const personalInfo = {
   website: "https://alexchen.dev",
   aboutMe: {
     title: "About Me",
-    description: "I'm a passionate full-stack developer with over 4 years of experience creating digital solutions that make a difference. My journey in tech started with curiosity and has evolved into a deep love for crafting exceptional user experiences.",
+    description: "I'm a passionate Software Engineer with over 1.5 years of experience creating digital solutions that make a difference. My journey in tech started with curiosity and has evolved into a deep love for crafting innovative products .",
     highlights: [
       {
         title: "Problem Solver",
@@ -246,8 +317,8 @@ export const personalInfo = {
     ]
   },
   social: {
-    github: "https://github.com/alexchen",
-    linkedin: "https://linkedin.com/in/alexchen",
+    github: "https://github.com/BRYAN1309",
+    linkedin: "https://www.linkedin.com/in/bryan-thanaya-0b1833292/",
     twitter: "https://twitter.com/alexchen_dev"
   }
 };

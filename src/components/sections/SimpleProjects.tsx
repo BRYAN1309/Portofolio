@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github, Star, User, ImageIcon } from 'lucide-react';
 import Button from '../common/Button';
 import { projects } from '@/data/portfolio';
 
 const SimpleProjects: React.FC = () => {
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
+
+  const handleImageError = (projectId: number) => {
+    setImageErrors(prev => ({ ...prev, [projectId]: true }));
+  };
+
+  const ProjectImage: React.FC<{ project: typeof projects[0] }> = ({ project }) => {
+    if (!project.image || imageErrors[project.id]) {
+      return (
+        <div className="w-full h-48 bg-gradient-to-br from-primary/5 to-primary/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
+              <ImageIcon className="w-8 h-8 text-primary" />
+            </div>
+            <p className="text-muted-foreground text-sm">Project Preview</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="w-full h-48 rounded-lg mb-6 overflow-hidden border border-border/30">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          onError={() => handleImageError(project.id)}
+        />
+      </div>
+    );
+  };
 
   return (
     <section id="projects" className="py-20 bg-gradient-subtle">
@@ -69,33 +100,54 @@ const SimpleProjects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Project Image Placeholder */}
-              <div className="w-full h-48 bg-muted/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <ExternalLink className="w-8 h-8 text-primary" />
-                  </div>
-                  <p className="text-muted-foreground text-sm">Project Preview</p>
-                </div>
-              </div>
+              {/* Project Image */}
+              <ProjectImage project={project} />
 
               <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* My Roles */}
+              <div className="mb-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <User className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-foreground">My Roles</span>
+                </div>
+                <div className="bg-secondary/20 rounded-lg p-3 border border-border/20 mb-3">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {project.roles.map((role) => (
+                      <span
+                        key={role}
+                        className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                      >
+                        {role}
+                      </span>
+                    ))}
+                  </div>
+                  {project.roleDescription && (
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {project.roleDescription}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Technologies */}
+              <div className="mb-6">
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {project.liveUrl && (
@@ -121,10 +173,12 @@ const SimpleProjects: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300"
+                  className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <h4 className="text-lg font-bold">{project.title}</h4>
+                    <h4 className="text-lg font-bold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
                     <div className="flex items-center gap-2">
                       {project.githubUrl && (
                         <motion.a
@@ -150,11 +204,49 @@ const SimpleProjects: React.FC = () => {
                       )}
                     </div>
                   </div>
+
+                  {/* Small Project Image for Other Projects */}
+                  {project.image && !imageErrors[project.id] && (
+                    <div className="w-full h-32 rounded-lg mb-4 overflow-hidden border border-border/30">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        onError={() => handleImageError(project.id)}
+                      />
+                    </div>
+                  )}
                   
                   <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
 
+                  {/* My Roles - Compact version */}
+                  <div className="mb-3">
+                    <div className="flex items-center gap-1 mb-2">
+                      <User className="w-3 h-3 text-primary" />
+                      <span className="text-xs font-medium text-foreground">Roles</span>
+                    </div>
+                    <div className="bg-secondary/15 rounded-md p-2 border border-border/15">
+                      <div className="flex flex-wrap gap-1 mb-2">
+                        {project.roles.map((role) => (
+                          <span
+                            key={role}
+                            className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs"
+                          >
+                            {role}
+                          </span>
+                        ))}
+                      </div>
+                      {project.roleDescription && (
+                        <p className="text-xs text-muted-foreground leading-tight line-clamp-3">
+                          {project.roleDescription}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Technologies */}
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
