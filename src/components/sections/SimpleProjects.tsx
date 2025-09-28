@@ -16,7 +16,7 @@ const SimpleProjects: React.FC = () => {
   const ProjectImage: React.FC<{ project: typeof projects[0] }> = ({ project }) => {
     if (!project.image || imageErrors[project.id]) {
       return (
-        <div className="w-full h-48 bg-gradient-to-br from-primary/5 to-primary/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
+        <div className="w-full h-80 bg-gradient-to-br from-primary/5 to-primary/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
           <div className="text-center">
             <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
               <ImageIcon className="w-8 h-8 text-primary" />
@@ -28,7 +28,7 @@ const SimpleProjects: React.FC = () => {
     }
 
     return (
-      <div className="w-full h-48 rounded-lg mb-6 overflow-hidden border border-border/30">
+      <div className="w-full h-80 rounded-lg mb-6 overflow-hidden border border-border/30">
         <img
           src={project.image}
           alt={`${project.title} preview`}
@@ -205,9 +205,9 @@ const SimpleProjects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Small Project Image for Other Projects */}
+                  {/* Larger Project Image for Other Projects */}
                   {project.image && !imageErrors[project.id] && (
-                    <div className="w-full h-32 rounded-lg mb-4 overflow-hidden border border-border/30">
+                    <div className="w-full h-64 rounded-lg mb-4 overflow-hidden border border-border/30">
                       <img
                         src={project.image}
                         alt={`${project.title} preview`}

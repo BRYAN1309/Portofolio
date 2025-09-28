@@ -1,5 +1,9 @@
 import logo from "@/assets/logo.svg"
 import bukapajak from  "@/assets/BukaPajak.png"
+import nextpath from "@/assets/nextPath.png"
+import signtalk from "@/assets/SignTalk.png"
+import compwaste from "@/assets/compwaste.png"
+import horasedu from "@/assets/horasedu.png"
 export interface Experience {
   id: number;
   company: string;
@@ -146,8 +150,8 @@ export const projects: Project[] = [
     roles: ["Backend Engineer"],
     roleDescription:
       "Designed hybrid data architecture (Supabase + blockchain), implemented Ethereum smart contracts, integrated MetaMask authentication, built 20+ REST APIs, and developed transaction validation and role-based access systems. Ensured scalability and security for daily transactions.",
-    githubUrl: "https://github.com/example/bukapajak",
-    liveUrl: "https://bukapajak.example.com",
+    githubUrl: "https://github.com/BRYAN1309/Hology-Software-Development",
+    liveUrl: "https://drive.google.com/file/d/1WwkWfwlOqsW9eaIgY3xe7A9KAIOTMR6O/view?usp=drive_link",
     featured: true,
     image: bukapajak
   },
@@ -163,7 +167,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/nextpath",
     liveUrl: "https://nextpath.example.com",
     featured: true,
-    image: "/assets/projects/nextpath.jpg"
+    image: nextpath
   },
   {
     id: 3,
@@ -176,8 +180,8 @@ export const projects: Project[] = [
       "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
     githubUrl: "https://github.com/example/horasedu",
     liveUrl: "https://horasedu.example.com",
-    featured: false,
-    image: "/assets/projects/horasedu.jpg"
+    featured: true,
+    image: horasedu
   },
   {
     id: 4,
@@ -191,7 +195,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/example/signtalk",
     liveUrl: "https://signtalk.example.com",
     featured: true,
-    image: "/assets/projects/signtalk.jpg"
+    image: signtalk
   },
   {
     id: 5,
@@ -204,8 +208,8 @@ export const projects: Project[] = [
       "Designed and developed backend system, managed database, implemented REST APIs, business logic, and deployment. Ensured API reliability, optimized data flows, and supported real-time transactions between sellers and buyers.",
     githubUrl: "https://github.com/example/compwaste",
     liveUrl: "https://compwaste.example.com",
-    featured: false,
-    image: "/assets/projects/compwaste.jpg"
+    featured: true,
+    image: compwaste
   }
 ];
 
@@ -271,7 +275,7 @@ export const organizations: Organization[] = [
   },
   {
     id: 3,
-    name: "Formalistic - GDGoC Core Team (GDGoC BINUS Bandung)",
+    name: "Formalistic - Google Developer Group on Campus Core Team (GDGoC BINUS Bandung)",
     position: "Event Organizer, Core Team",
     duration: "Oct 2024 – Present",
     description: "Served as event organizer within GDGoC BINUS Bandung core team, focusing on strengthening community engagement through event management.",
