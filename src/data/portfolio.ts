@@ -164,8 +164,8 @@ export const projects: Project[] = [
     roles: ["Backend Developer"],
     roleDescription:
       "Built the backend system using Laravel, integrated Flask-based AI components, designed REST APIs for user goals, article management, and chatbot integration. Ensured smooth communication between frontend, AI chatbot, and database.",
-    githubUrl: "https://github.com/example/nextpath",
-    liveUrl: "https://nextpath.example.com",
+    githubUrl: "https://github.com/BRYAN1309/IN-FEST-2025.git",
+    liveUrl: "https://www.instagram.com/p/DKXVMvjPn6t/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     featured: true,
     image: nextpath
   },
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     roles: ["Backend Engineer"],
     roleDescription:
       "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
-    githubUrl: "https://github.com/example/horasedu",
+    githubUrl: "https://github.com/BRYAN1309/HorasEdu",
     liveUrl: "https://horasedu.example.com",
     featured: true,
     image: horasedu
