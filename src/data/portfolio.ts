@@ -216,11 +216,12 @@ export const projects: Project[] = [
 
 export const certificates: Certificate[] = [
   {
-    id: 1,
+  id: 1,
     name: "AWS Certified Developer",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "AWS-DEV-2023-001"
+    credentialId: "AWS-DEV-2023-001",
+    image: "https://drive.google.com/file/d/13EATEyq0EX4GphRw3If-h0YDmfucm_-u/view?usp=drive_link"
   },
   {
     id: 2,
