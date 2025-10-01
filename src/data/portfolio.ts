@@ -4,6 +4,12 @@ import nextpath from "@/assets/nextPath.png"
 import signtalk from "@/assets/SignTalk.png"
 import compwaste from "@/assets/compwaste.png"
 import horasedu from "@/assets/horasedu.png"
+import sertifFe from "@/assets/FE.png"
+import sertiftechno from "@/assets/techno.png"
+import sertifBe from"@/assets/BE - Bryan Thanaya (1)-1.png"
+import sertifBatak from "@/assets/Sertifikat Lomba Website Aksara Batak-pages-56-1.png"
+import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
+import sertifUGM from ""
 export interface Experience {
   id: number;
   company: string;
@@ -216,19 +222,20 @@ export const projects: Project[] = [
 
 export const certificates: Certificate[] = [
   {
-  id: 1,
+    id: 1,
     name: "AWS Certified Developer",
     issuer: "Amazon Web Services",
     date: "2023",
     credentialId: "AWS-DEV-2023-001",
-    image: "https://drive.google.com/file/d/13EATEyq0EX4GphRw3If-h0YDmfucm_-u/view?usp=drive_link"
+    image: sertifFe    
   },
   {
     id: 2,
     name: "Google Cloud Professional",
     issuer: "Google Cloud",
     date: "2022",
-    credentialId: "GCP-PRO-2022-002"
+    credentialId: "META-REACT-2022-003",
+    image: sertiftechno
   },
   {
     id: 3,

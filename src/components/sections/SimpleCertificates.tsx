@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink } from 'lucide-react';
+
 import { certificates } from '@/data/portfolio';
 
-const SimpleCertificates: React.FC = () => {
+const SimpleCertificates = () => {
+  const [imageErrors, setImageErrors] = useState({});
+
+  const handleImageError = (certId) => {
+    setImageErrors(prev => ({ ...prev, [certId]: true }));
+  };
+
   return (
     <section id="certificates" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,14 +40,25 @@ const SimpleCertificates: React.FC = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
             >
-              {/* Certificate Icon/Image Placeholder */}
-              <div className="w-full h-32 bg-muted/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
+              {/* Certificate Image */}
+              <div className="w-full h-48 bg-muted/20 rounded-lg mb-6 overflow-hidden border border-border/30">
+                {certificate.image && !imageErrors[certificate.id] ? (
+                  <img
+                    src={certificate.image}
+                    alt={`${certificate.name} certificate`}
+                    onError={() => handleImageError(certificate.id)}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                        <Award className="w-8 h-8 text-primary" />
+                      </div>
+                      <p className="text-muted-foreground text-sm">Certificate Image</p>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground text-xs">Certificate</p>
-                </div>
+                )}
               </div>
 
               <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
@@ -57,7 +75,7 @@ const SimpleCertificates: React.FC = () => {
               </div>
 
               {certificate.credentialId && (
-                <div className="text-xs text-muted-foreground mb-4 p-2 bg-muted/20 rounded border">
+                <div className="text-xs text-muted-foreground mb-4 p-2 bg-muted/20 rounded border border-border/50">
                   <span className="font-medium">Credential ID: </span>
                   {certificate.credentialId}
                 </div>
@@ -66,7 +84,7 @@ const SimpleCertificates: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors text-sm"
+                className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors text-sm border border-primary/20"
               >
                 <ExternalLink className="w-4 h-4" />
                 View Certificate
