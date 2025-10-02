@@ -4,6 +4,8 @@ import nextpath from "@/assets/nextPath.png"
 import signtalk from "@/assets/SignTalk.png"
 import compwaste from "@/assets/compwaste.png"
 import horasedu from "@/assets/horasedu.png"
+import foodai from "@/assets/foodai.png"
+import pokemonapp from "@/assets/pokemon.png"
 import sertifFe from "@/assets/FE.png"
 import sertiftechno from "@/assets/techno.png"
 import sertifBe from"@/assets/BE - Bryan Thanaya (1)-1.png"
@@ -12,6 +14,9 @@ import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
 import sertifreact from "@/assets/udemyreact.png"
 import sertiflaravel from '@/assets/udemylaravel.png'
 import sertifFindit from "@/assets/sertiffindit.jpg"
+import aktivis from "@/assets/SertifikatAktivis_Bryan Thanaya_page-0001.jpg"
+import pengurus from "@/assets/Pengurus BNCC Bandung 2025.jpg"
+import gdgOg from "@/assets/Gdg.png"
 export interface Experience {
   id: number;
   company: string;
@@ -22,13 +27,7 @@ export interface Experience {
   logo?: string;
 }
 
-export interface Skill {
-  id: number;
-  name: string;
-  category: 'Frontend' | 'Backend' | 'Tools' | 'Languages';
-  level: number;
-  icon?: string;
-}
+
 
 export interface Project {
   id: number;
@@ -122,32 +121,7 @@ export const experiences: Experience[] = [
 
 
 
-export const skills: Skill[] = [
-  // Frontend
-  { id: 1, name: "React", category: "Frontend", level: 95 },
-  { id: 2, name: "TypeScript", category: "Frontend", level: 90 },
-  { id: 3, name: "Next.js", category: "Frontend", level: 85 },
-  { id: 4, name: "Vue.js", category: "Frontend", level: 80 },
-  { id: 5, name: "Tailwind CSS", category: "Frontend", level: 90 },
-  
-  // Backend
-  { id: 6, name: "Node.js", category: "Backend", level: 85 },
-  { id: 7, name: "Python", category: "Backend", level: 80 },
-  { id: 8, name: "PostgreSQL", category: "Backend", level: 75 },
-  { id: 9, name: "MongoDB", category: "Backend", level: 80 },
-  { id: 10, name: "GraphQL", category: "Backend", level: 75 },
-  
-  // Tools
-  { id: 11, name: "Git", category: "Tools", level: 90 },
-  { id: 12, name: "Docker", category: "Tools", level: 70 },
-  { id: 13, name: "AWS", category: "Tools", level: 75 },
-  { id: 14, name: "Figma", category: "Tools", level: 85 },
-  
-  // Languages
-  { id: 15, name: "JavaScript", category: "Languages", level: 95 },
-  { id: 16, name: "Python", category: "Languages", level: 80 },
-  { id: 17, name: "Go", category: "Languages", level: 65 }
-];
+
 
 export const projects: Project[] = [
   {
@@ -155,7 +129,7 @@ export const projects: Project[] = [
     title: "BukaPajak",
     description:
       "Web-based platform designed to improve tax transparency and public participation in Indonesia. It leverages blockchain technology, smart contracts, and wallet integration (MetaMask) to ensure transparency, immutability, and accountability in tax-related transactions.",
-    technologies: ["Go", "Supabase", "Ethereum (Testnet)", "Smart Contracts", "REST API", "MetaMask"],
+    technologies: ["Go", "Supabase", "Ethereum (Testnet)", "Smart Contracts", "REST API", "MetaMask", "JWT", "React + Vite", "Typescript"],
     roles: ["Backend Engineer"],
     roleDescription:
       "Designed hybrid data architecture (Supabase + blockchain), implemented Ethereum smart contracts, integrated MetaMask authentication, built 20+ REST APIs, and developed transaction validation and role-based access systems. Ensured scalability and security for daily transactions.",
@@ -169,7 +143,7 @@ export const projects: Project[] = [
     title: "NextPath",
     description:
       "AI-powered career recommendation platform for students, fresh graduates, and job seekers. It provides personalized career paths, goal tracking, and curated articles on industry insights and skill-building.",
-    technologies: ["Laravel", "Flask", "MySQL", "REST API", "AI/ML"],
+    technologies: ["Laravel", "Flask", "MySQL", "REST API", "AI", "JWT", "Python", "MySQL", "React + Vite", "Typescript"],
     roles: ["Backend Developer"],
     roleDescription:
       "Built the backend system using Laravel, integrated Flask-based AI components, designed REST APIs for user goals, article management, and chatbot integration. Ensured smooth communication between frontend, AI chatbot, and database.",
@@ -183,7 +157,7 @@ export const projects: Project[] = [
     title: "Horasedu",
     description:
       "Digital education platform to preserve Batak culture through a modern, interactive LMS. Features Batak language learning modules, folk tales, history, quizzes, final exams, and mini-games.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "REST API"],
+    technologies: ["React + Vite", "Typescript", "Python", "PostgreSQL", "REST API", "JWT", "Flask"],
     roles: ["Backend Engineer"],
     roleDescription:
       "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
@@ -197,12 +171,12 @@ export const projects: Project[] = [
     title: "SignTalk",
     description:
       "AI-powered video call platform that translates sign language into text and speech in real time, bridging communication gaps for individuals with hearing or speech disabilities.",
-    technologies: ["React", "Node.js", "WebRTC", "AI/ML", "REST API"],
+    technologies: ["React", "Node.js", "WebRTC", "ML", "REST API", "JavaScript"],
     roles: ["Full Stack Developer"],
     roleDescription:
       "Developed the frontend UI for real-time video calls, built backend APIs for room/participant management, and integrated AI models for sign language recognition and translation. Delivered an inclusive communication platform.",
-    githubUrl: "https://github.com/example/signtalk",
-    liveUrl: "https://signtalk.example.com",
+    githubUrl: "https://github.com/HenryGunadi/Signtalk-UGM-Hackathon.git",
+    liveUrl: "https://drive.google.com/file/d/1s8KrQK80lDlKC6_PsWIVcgpuVZWatvf6/view?usp=drive_link",
     featured: true,
     image: signtalk
   },
@@ -211,15 +185,66 @@ export const projects: Project[] = [
     title: "Compwaste",
     description:
       "Food waste management app enabling restaurants to redistribute organic waste to farmers or compost producers. Supports waste classification, location matching, and secure transactions.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "REST API"],
+    technologies: ["Flutter", "Laravel", "PostgreSQL", "REST API"],
     roles: ["Backend Developer"],
     roleDescription:
       "Designed and developed backend system, managed database, implemented REST APIs, business logic, and deployment. Ensured API reliability, optimized data flows, and supported real-time transactions between sellers and buyers.",
-    githubUrl: "https://github.com/example/compwaste",
-    liveUrl: "https://compwaste.example.com",
+    githubUrl: "https://github.com/SalmaMuntazShaumi/AolSoftwareEngineering.git",
+    liveUrl: "https://drive.google.com/drive/folders/1WUtPHQX-FIvVz8bl6GkCxaDFyZ5Q0hPh",
     featured: true,
     image: compwaste
-  }
+  },
+  {
+  id: 6,
+  title: "FoodyAI",
+  description:
+    "AI-powered nutrition detection platform that identifies Indonesian food from images and provides detailed nutritional insights. Built to raise awareness of unhealthy eating habits and help users make better dietary choices while still enjoying traditional cuisine.",
+  technologies: [
+    "Python",
+    "TensorFlow/Keras",
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Google Colab",
+    "Visual Studio Code"
+  ],
+  roles: ["Fullstack Developer"],
+  roleDescription:
+    "Developed end-to-end AI-powered food recognition and nutrition tracking platform. Built and trained CNN models for 13+ Indonesian food classes with 500+ images each, achieving ~82% validation accuracy. Implemented data preprocessing, augmentation, and evaluation pipeline. Designed and integrated frontend for food image input and nutrition output visualization. Connected backend model predictions with nutrition database (calories, protein, fat, sodium, etc.) for real-time results. Contributed to dataset collection (Kaggle + Bing API) and system deployment.",
+  githubUrl: "https://drive.google.com/drive/folders/1D-6IcJJPoTIgWMpelOVZUHaRSV_LXhUY",
+  liveUrl: "https://drive.google.com/drive/folders/1D-6IcJJPoTIgWMpelOVZUHaRSV_LXhUY",
+  featured: true,
+  image: foodai
+  },
+  {
+  id: 7,
+  title: "Pokeman Web",
+  description:
+    "An interactive web application that displays detailed data about various Pokémon, including abilities, base stats, and types. Users can browse, search, and explore information fetched from the PokéAPI in a clean and responsive interface.",
+  technologies: ["React", "JavaScript (ES6+)", "CSS", "PokéAPI", "Vercel"],
+  roles: ["Fullstack Developer"],
+  roleDescription:
+    "Built the application as a solo developer from the ground up using React. Designed a responsive UI, implemented search and detail views, and integrated PokéAPI using fetch() and async JavaScript. Managed state and props across reusable components, optimized code for performance, and deployed to Vercel for public access. Learned React fundamentals, API consumption, modular frontend design, and foundations of fullstack development.",
+  githubUrl: "https://github.com/BRYAN1309/Pokemon-app.git", // ganti sesuai repo kamu
+  liveUrl: "https://pokemon-app-m719.vercel.app/", // ganti sesuai deployment kamu
+  featured: false,
+  image: pokemonapp
+  },
+  {
+  id: 8,
+  title: "Library Management System",
+  description:
+    "A web-based application for efficient library management, enabling CRUD operations on books and providing search and filter features. Built with a responsive and modern UI using Tailwind CSS.",
+  technologies: ["PHP", "Tailwind CSS", "MySQL"],
+  roles: ["Fullstack Developer"],
+  roleDescription:
+    "Developed the entire system with PHP backend, MySQL database, and Tailwind CSS frontend. Implemented CRUD functionality for book records, integrated search and filter features, and designed a responsive interface. Ensured database integrity and smooth user interactions through optimized queries and clean UI design.",
+  githubUrl: "https://github.com/BRYAN1309/LibraryManagementSystem.git", // ganti dengan repo kamu
+  liveUrl: "", // isi kalau ada demo online
+  featured: false,
+}
+
+
 ];
 
 
@@ -319,7 +344,8 @@ export const organizations: Organization[] = [
       "LnT Trial Class – Coordinated end-to-end execution, including scheduling and team coordination",
       "TechBlast 2024 – Oversaw event theme development and rundown planning; served as PIC for LnT Trial Class segment",
       "BNCC Opening Season 2024 – Supported registration of 300+ participants for the Launching 2024 event"
-    ]
+    ],
+    image: aktivis
   },
   {
     id: 2,
@@ -331,7 +357,8 @@ export const organizations: Organization[] = [
       "Main PIC for LnT Class UI/UX, coordinating operations with 30+ participants per session",
       "Selected Mentor for Leadership Development Program (LDP) 2025, guiding 7 activists",
       "Coordinator for LnT Camp 2025, overseeing Publication, Design, and Event divisions"
-    ]
+    ],
+    image: pengurus
   },
   {
     id: 3,
@@ -343,7 +370,8 @@ export const organizations: Organization[] = [
       "Organized 10+ community and tech events with 30+ participants each",
       "Handled end-to-end event execution including planning, coordination, and on-site operations",
       "Contributed to consistent community growth and visibility of GDGoC BINUS Bandung on campus"
-    ]
+    ],
+    image: gdgOg
   }
 ];
 

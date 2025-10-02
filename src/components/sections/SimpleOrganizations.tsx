@@ -36,9 +36,19 @@ const SimpleOrganizations: React.FC = () => {
               <div className="grid lg:grid-cols-3 gap-8 items-start">
                 {/* Organization Info */}
                 <div className="lg:col-span-1">
-                  {/* Organization Image Placeholder */}
-                  <div className="w-24 h-24 bg-muted/20 rounded-lg mb-6 flex items-center justify-center border border-border/30 mx-auto lg:mx-0">
-                    <Users className="w-8 h-8 text-primary" />
+                  {/* Organization Image */}
+                  <div className="w-40 h-40 rounded-lg mb-6 overflow-hidden border border-border/30 mx-auto lg:mx-0">
+                    {org.image ? (
+                      <img 
+                        src={org.image} 
+                        alt={org.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted/20 flex items-center justify-center">
+                        <Users className="w-12 h-12 text-primary" />
+                      </div>
+                    )}
                   </div>
 
                   <h3 className="text-xl font-bold mb-2 text-center lg:text-left">

@@ -151,10 +151,12 @@ const SimpleProjects: React.FC = () => {
               </div>
 
               {project.liveUrl && (
-                <Button variant="primary" size="sm" className="w-full">
-                  View Project
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block">
+                  <Button variant="primary" size="sm" className="w-full">
+                    View Project
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
               )}
             </motion.div>
           ))}
