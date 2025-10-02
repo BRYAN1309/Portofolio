@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Calendar, ExternalLink } from 'lucide-react';
-
 import { certificates } from '@/data/portfolio';
 
 const SimpleCertificates = () => {
@@ -81,14 +80,19 @@ const SimpleCertificates = () => {
                 </div>
               )}
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors text-sm border border-primary/20"
-              >
-                <ExternalLink className="w-4 h-4" />
-                View Certificate
-              </motion.button>
+              {certificate.certificateUrl && (
+                <motion.a
+                  href={certificate.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors text-sm border border-primary/20"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View Certificate
+                </motion.a>
+              )}
             </motion.div>
           ))}
         </div>
@@ -114,7 +118,7 @@ const SimpleCertificates = () => {
                 <div className="text-muted-foreground text-sm">Certificates</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">3</div>
+                <div className="text-3xl font-bold text-primary">2</div>
                 <div className="text-muted-foreground text-sm">Years Learning</div>
               </div>
               <div className="text-center">

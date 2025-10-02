@@ -9,7 +9,9 @@ import sertiftechno from "@/assets/techno.png"
 import sertifBe from"@/assets/BE - Bryan Thanaya (1)-1.png"
 import sertifBatak from "@/assets/Sertifikat Lomba Website Aksara Batak-pages-56-1.png"
 import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
-import sertifUGM from ""
+import sertifreact from "@/assets/udemyreact.png"
+import sertiflaravel from '@/assets/udemylaravel.png'
+import sertifFindit from "@/assets/sertiffindit.jpg"
 export interface Experience {
   id: number;
   company: string;
@@ -48,6 +50,7 @@ export interface Certificate {
   date: string;
   credentialId?: string;
   image?: string;
+  certificateUrl?: string; // Add this
 }
 
 export interface Organization {
@@ -223,33 +226,82 @@ export const projects: Project[] = [
 export const certificates: Certificate[] = [
   {
     id: 1,
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credentialId: "AWS-DEV-2023-001",
-    image: sertifFe    
+    name: "React - The Complete Guide 2025 (incl. Next.js, Redux)",
+    issuer: "Academind by Maximilian Schwarzmüller",
+    date: "June 20, 2025",
+    credentialId: "UC-0dfb96e7-bf83-44f6-aada-a7291a0f9af1",
+    image: sertifreact,
+    certificateUrl: "https://drive.google.com/file/d/11SR4JZ3xCBRUI0dcwZ4iCXZSQN8DzeDH/view?usp=drive_link"
   },
   {
     id: 2,
-    name: "Google Cloud Professional",
-    issuer: "Google Cloud",
-    date: "2022",
-    credentialId: "META-REACT-2022-003",
-    image: sertiftechno
+    name: "Laravel : Pemula sampai Mahir",
+    issuer: "Programmer Zaman Now",
+    date: "June 20, 2025",
+    credentialId: "UC-75798fe6-6afa-4e38-8403-4c0c069d7355",
+    image: sertiflaravel,
+    certificateUrl: "https://drive.google.com/file/d/1j9CkAwv7IZ_Py7dIv-fQicVYfJLwWoUj/view?usp=sharing"
+
   },
-  {
+   {
     id: 3,
-    name: "React Developer Certification",
-    issuer: "Meta",
-    date: "2022",
-    credentialId: "META-REACT-2022-003"
+    name: "Front End Development Class",
+    issuer: "BNCC (Bina Nusantara Computer Club)",
+    date: "August 2024",
+    credentialId: "015/LNT/III/RC/BNCC/BDG/XXXX/08.2024",
+    image: sertifFe,
+    certificateUrl: "https://drive.google.com/file/d/13EATEyq0EX4GphRw3If-h0YDmfucm_-u/view?usp=drive_link"
+
   },
   {
     id: 4,
-    name: "Full Stack Web Development",
-    issuer: "FreeCodeCamp",
-    date: "2021",
-    credentialId: "FCC-FULLSTACK-2021-004"
+    name: "Back-End Development Class",
+    issuer: "BNCC (Bina Nusantara Computer Club)",
+    date: "2024/2025",
+    credentialId: "001/LNT/III/MEMBER/BNCC/BDG/XXXVI/08.2025",
+    image: sertifBe,
+    certificateUrl: "https://drive.google.com/file/d/1jFQW7kBs2zyUy4lixYOtuZMV676Thq95/view?usp=drive_link"
+
+  },
+   {
+    id: 5,
+    name: "Website Aksara Batak Development",
+    issuer: "PANDI i.id Registry",
+    date: "August 27, 2025",
+    credentialId: "horasedu.id",
+    image: sertifBatak,
+    certificateUrl: "https://drive.google.com/file/d/1aYKYgYliH_gGiUK0fWPLHUai1XDke5jN/view?usp=drive_link"
+
+  },
+  {
+    id: 6,
+    name: "National Web Development Competition Participant",
+    issuer: "Universitas PGRI Semarang",
+    date: "May 7, 2025",
+    credentialId: "001/A/PAN_INFEST/HIMFORMA/VII/2025",
+    image: sertifPGRI,
+    certificateUrl: "https://drive.google.com/file/d/1k0rehlPIlL7pTV_ymn-OX7PFMrOSADFk/view?usp=drive_link"
+
+  },
+  {
+    id: 7,
+    name: "Hackathon 8.0 Participant",
+    issuer: "TechnoScape BNCC",
+    date: "May 16 - June 1, 2025",
+    credentialId: "Team Barudak Bandung",
+    image: sertiftechno,
+    certificateUrl: "https://drive.google.com/file/d/1rKHFKKlPmBO_yRuzBwe612b6dQmtLOeS/view?usp=drive_link"
+
+  },
+  {
+    id: 8,
+    name: "Hackathon Participant - FIND IT! 2025",
+    issuer: "KMTETI Fakultas Teknik UGM",
+    date: "May 17, 2025",
+    credentialId: "Future Innovation and Discovery IT",
+    image: sertifFindit,
+    certificateUrl: "https://drive.google.com/file/d/1IxUNmwNdt7IWNkhjqaOOiVsCVGOkIzVl/view?usp=drive_link"
+
   }
 ];
 
@@ -306,7 +358,7 @@ export const personalInfo = {
   website: "https://alexchen.dev",
   aboutMe: {
     title: "About Me",
-    description: "I'm a passionate Software Engineer with over 1.5 years of experience creating digital solutions that make a difference. My journey in tech started with curiosity and has evolved into a deep love for crafting innovative products .",
+    description: "I'm a passionate Software Engineer with over 2 years of experience creating digital solutions that make a difference. My journey in tech started with curiosity and has evolved into a deep love for crafting innovative products .",
     highlights: [
       {
         title: "Problem Solver",
@@ -322,9 +374,9 @@ export const personalInfo = {
       }
     ],
     stats: [
-      { label: "Years Experience", value: "4+" },
-      { label: "Projects Completed", value: "50+" },
-      { label: "Happy Clients", value: "30+" },
+      { label: "Years Experience", value: "2+" },
+      { label: "Projects Completed", value: "10+" },
+      { label: "Competitions Participated", value: "5+" },
       { label: "Coffee Cups", value: "∞" }
     ]
   },
