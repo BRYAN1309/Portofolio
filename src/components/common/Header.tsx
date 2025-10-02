@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
-
+import logo from "@/assets/logo.svg"
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,10 +48,10 @@ const Header: React.FC = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-gradient cursor-pointer"
+            className="cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            Alex Chen
+            <img src={logo} alt="Logo" className="h-8 w-auto" />
           </motion.div>
 
           {/* Desktop Navigation */}

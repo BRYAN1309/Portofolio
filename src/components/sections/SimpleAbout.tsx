@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Target, Users, BookOpen, Coffee, Award, Heart, Lightbulb } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
+import profilepicture from "@/assets/profilepciture.jpg"
 
 const SimpleAbout: React.FC = () => {
   const iconMap = {
@@ -20,6 +21,32 @@ const SimpleAbout: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* Profile Picture */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative">
+              {/* Gradient Border */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 animate-pulse">
+                <div className="w-full h-full rounded-full bg-background"></div>
+              </div>
+              {/* Profile Image */}
+              <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
+                <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                  <img 
+                    src={profilepicture} 
+                    alt="Profile Picture" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6">
             {personalInfo.aboutMe.title}
           </h2>

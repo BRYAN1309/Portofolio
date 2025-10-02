@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaCode, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 
 const SimpleSkills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
@@ -119,18 +120,18 @@ const SimpleSkills = () => {
         </div>
 
         {/* Skills Categories Overview */}
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto "
         >
           {[
-            { title: "Languages", count: "7+", icon: "💻" },
-            { title: "Frontend", count: "7+", icon: "🎨" },
-            { title: "Backend", count: "5+", icon: "⚙️" },
-            { title: "Database", count: "3+", icon: "🗄️" }
+            { title: "Languages", count: "7+", icon: <FaCode /> },
+            { title: "Frontend", count: "7+", icon: <FaReact /> },
+            { title: "Backend", count: "5+", icon: <FaNodeJs /> },
+            { title: "Database", count: "3+", icon: <FaDatabase /> },
           ].map((category, index) => (
             <motion.div
               key={category.title}
@@ -142,7 +143,10 @@ const SimpleSkills = () => {
             >
               <div className="text-3xl mb-2">{category.icon}</div>
               <div className="text-2xl font-bold text-blue-400 mb-1">{category.count}</div>
-              <div className="text-sm text-gray-400">{category.title}</div>
+              {/* Gradient title */}
+              <div className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                {category.title}
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -156,7 +160,7 @@ const SimpleSkills = () => {
           className="mt-12 text-center"
         >
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700/50 max-w-4xl mx-auto hover:border-blue-500/30 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-4 text-white">My Approach</h3>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">My Approach</h3>
             <p className="text-gray-400 leading-relaxed">
               I believe in continuous learning and staying updated with the latest technologies. 
               My diverse skill set allows me to work effectively across the full stack, 

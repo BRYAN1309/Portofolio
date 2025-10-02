@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import Button from '../common/Button';
 import { personalInfo } from '@/data/portfolio';
 
 const SimpleHero: React.FC = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const texts = [
+    personalInfo.name,
+    'a Software Engineer',
+    'an AI Enthusiast'
+  ];
+
+  useEffect(() => {
+    const currentFullText = texts[currentTextIndex];
+    
+    const getTypingSpeed = () => {
+      if (isDeleting) return Math.random() * 50 + 30; 
+      return Math.random() * 100 + 80; 
+    };
+    
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    if (!isDeleting && displayedText === currentFullText) {
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayedText === '') {
+      setIsDeleting(false);
+      setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setDisplayedText(
+        isDeleting
+          ? currentFullText.substring(0, displayedText.length - 1)
+          : currentFullText.substring(0, displayedText.length + 1)
+      );
+    }, getTypingSpeed());
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentTextIndex]);
+
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
     if (element) {
@@ -40,7 +82,10 @@ const SimpleHero: React.FC = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
             Hi, I'm{' '}
-            <span className="text-gradient">{personalInfo.name}</span>
+            <span className="text-gradient">
+              {displayedText}
+              <span className="animate-pulse">|</span>
+            </span>
           </motion.h1>
 
           <motion.p

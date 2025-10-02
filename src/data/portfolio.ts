@@ -380,9 +380,9 @@ export const personalInfo = {
   name: "Bryan Thanaya",
   tagline: "Software Engineer & Artificial Intelligence Enthusiast",
   bio: "Passionate about creating exceptional digital experiences with modern technologies. I specialize in building scalable web applications with a focus on performance, accessibility, and user experience.",
-  location: "San Francisco, CA",
-  email: "alex.chen@example.com",
-  phone: "+1 (555) 123-4567",
+  location: "Indonesia, Jakarta",
+  email: "bryanthanaya1@gmail.com",
+  phone: "+62-813-9783-3239",
   website: "https://alexchen.dev",
   aboutMe: {
     title: "About Me",
@@ -405,12 +405,11 @@ export const personalInfo = {
       { label: "Years Experience", value: "2+" },
       { label: "Projects Completed", value: "10+" },
       { label: "Competitions Participated", value: "5+" },
-      { label: "Coffee Cups", value: "∞" }
+      { label: "Focus", value: "100%" }
     ]
   },
   social: {
     github: "https://github.com/BRYAN1309",
     linkedin: "https://www.linkedin.com/in/bryan-thanaya-0b1833292/",
-    twitter: "https://twitter.com/alexchen_dev"
   }
 };

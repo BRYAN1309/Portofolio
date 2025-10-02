@@ -62,10 +62,6 @@ const Footer: React.FC = () => {
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg">
-              <Phone className="w-5 h-5 mr-2" />
-              Schedule a Call
-            </Button>
           </div>
         </motion.div>
 
@@ -141,7 +137,6 @@ const Footer: React.FC = () => {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
             >
-              <Heart className="w-4 h-4 text-red-500 fill-red-500" />
             </motion.div>
             <span>using React & TypeScript</span>
           </div>
