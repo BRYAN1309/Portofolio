@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Building2, Calendar, Code, ArrowRight } from 'lucide-react';
 
 // Sample data - replace with your actual data
-import { Experience, experiences } from '@/data/portfolio';
+import { experiences } from '@/data/portfolio';
 
 const SimpleExperience = () => {
   return (

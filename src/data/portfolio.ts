@@ -6,15 +6,17 @@ import compwaste from "@/assets/compwaste.png"
 import horasedu from "@/assets/horasedu.png"
 import foodai from "@/assets/foodai.png"
 import pokemonapp from "@/assets/pokemon.png"
+import goproject from "@/assets/postman.png"
+import libraryproject from "@/assets/library.png"
 import sertifFe from "@/assets/FE.png"
 import sertiftechno from "@/assets/techno.png"
-import sertifCamp from "@/assets/lntcamp.jpg"
 import sertifBe from"@/assets/BE - Bryan Thanaya (1)-1.png"
 import sertifBatak from "@/assets/Sertifikat Lomba Website Aksara Batak-pages-56-1.png"
 import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
 import sertifreact from "@/assets/udemyreact.png"
 import sertiflaravel from '@/assets/udemylaravel.png'
 import sertifFindit from "@/assets/sertiffindit.jpg"
+import sertifcamp from "@/assets/lntcamp.svg"
 import icpc from "@/assets/2025-ICPC Asia Jakarta-Indonesia NC-PLACE.pdf.png"
 import aktivis from "@/assets/SertifikatAktivis_Bryan Thanaya_page-0001.jpg"
 import pengurus from "@/assets/Pengurus BNCC Bandung 2025.jpg"
@@ -64,7 +66,6 @@ export interface Organization {
   image?: string;
 }
 
-// Sample data
 export const experiences: Experience[] = [
   {
     id: 1,
@@ -244,6 +245,28 @@ export const projects: Project[] = [
   githubUrl: "https://github.com/BRYAN1309/LibraryManagementSystem.git", 
   liveUrl: "", 
   featured: false,
+  image: libraryproject
+  },
+  {
+  id: 9,
+  title: "Backend Management System",
+  description:
+    "A backend management system for handling products and employees with JWT-based authentication, built using Go and the Gin framework. Features include product and employee management, admin dashboard, and API landing page with product data exposure.",
+  technologies: [
+    "Go (Golang)",
+    "Gin Framework",
+    "PostgreSQL / MySQL (via GORM)",
+    "JWT (JSON Web Token)",
+    "Excelize (Excel export)",
+    "bcrypt (password hashing)"
+  ],
+  roles: ["Backend Developer"],
+  roleDescription:
+    "Developed a backend system to support product and employee management with secure JWT authentication and authorization. Implemented RESTful APIs for CRUD operations, Excel export functionality, and image uploads. Built a structured project architecture with handlers, models, repositories, and routes for scalability and maintainability.",
+  githubUrl: "https://github.com/BRYAN1309/e-commerce-lnt-camp-2025.git", 
+  liveUrl: "https://api.postman.com/collections/45400437-7d2ac694-51c9-4518-9bf1-1450a42cb07e?access_key=PMAT-01K31HVJJ7JCY381210MPHHW4G", 
+  featured: false,
+  image: goproject
 }
 
 
@@ -337,6 +360,15 @@ export const certificates: Certificate[] = [
   date: "26 - 27 October 2024",
   credentialId: "Honorable Mention",
   image: icpc,
+  certificateUrl: "https://drive.google.com/file/d/1-I-MKY9UOiCqKEkqv5sDwLj-Eve1V6Gv/view?usp=drive_link" 
+  },
+   {
+  id: 9,
+  name: "The 2024 ICPC Asia Jakarta - Indonesia National Contest",
+  issuer: "International Collegiate Programming Contest (ICPC)",
+  date: "26 - 27 October 2024",
+  credentialId: "Honorable Mention",
+  image: sertifcamp,
   certificateUrl: "https://drive.google.com/file/d/1-I-MKY9UOiCqKEkqv5sDwLj-Eve1V6Gv/view?usp=drive_link" 
   }
 ];

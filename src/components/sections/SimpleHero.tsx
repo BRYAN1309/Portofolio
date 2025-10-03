@@ -169,7 +169,7 @@ const SimpleHero: React.FC = () => {
             style={{ color: '#343434' }}
           >
             Hi, I'm{' '}
-              <span style={{ color: '#343434' }}>
+            <span style={{ color: '#343434' }}>
               {displayedText}
               <span className="animate-pulse">|</span>
             </span>
