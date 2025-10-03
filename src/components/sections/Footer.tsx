@@ -58,10 +58,14 @@ const Footer: React.FC = () => {
             Let's discuss how we can bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="lg">
+            <a href={personalInfo.social.linkedin}
+                target="_blank" 
+                rel="noopener noreferrer">
+              <Button variant="hero" size="lg">
               <Mail className="w-5 h-5 mr-2" />
-              Get In Touch
-            </Button>
+                Get In Touch
+              </Button>
+              </a>
           </div>
         </motion.div>
 

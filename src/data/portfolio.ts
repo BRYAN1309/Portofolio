@@ -14,6 +14,7 @@ import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
 import sertifreact from "@/assets/udemyreact.png"
 import sertiflaravel from '@/assets/udemylaravel.png'
 import sertifFindit from "@/assets/sertiffindit.jpg"
+import icpc from "@/assets/2025-ICPC Asia Jakarta-Indonesia NC-PLACE.pdf.png"
 import aktivis from "@/assets/SertifikatAktivis_Bryan Thanaya_page-0001.jpg"
 import pengurus from "@/assets/Pengurus BNCC Bandung 2025.jpg"
 import gdgOg from "@/assets/Gdg.png"
@@ -327,6 +328,15 @@ export const certificates: Certificate[] = [
     image: sertifFindit,
     certificateUrl: "https://drive.google.com/file/d/1IxUNmwNdt7IWNkhjqaOOiVsCVGOkIzVl/view?usp=drive_link"
 
+  },
+  {
+  id: 9,
+  name: "The 2024 ICPC Asia Jakarta - Indonesia National Contest",
+  issuer: "International Collegiate Programming Contest (ICPC)",
+  date: "26 - 27 October 2024",
+  credentialId: "Honorable Mention",
+  image: icpc,
+  certificateUrl: "https://drive.google.com/file/d/1-I-MKY9UOiCqKEkqv5sDwLj-Eve1V6Gv/view?usp=drive_link" 
   }
 ];
 
@@ -410,6 +420,7 @@ export const personalInfo = {
   },
   social: {
     github: "https://github.com/BRYAN1309",
-    linkedin: "https://www.linkedin.com/in/bryan-thanaya-0b1833292/",
-  }
+    linkedin: "https://www.linkedin.com/in/bryan-thanaya/",
+  },
+  cv: ""
 };

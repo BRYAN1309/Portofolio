@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
-import logo from "@/assets/logo.svg"
+import logo from "@/assets/logo.svg";
+import { personalInfo } from '@/data/portfolio';
+
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,11 +71,17 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <Button variant="hero" size="sm">
-              Get in Touch
-            </Button>
+            <a 
+              href={personalInfo.social.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="hero" size="sm">
+                Get in Touch
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,9 +113,15 @@ const Header: React.FC = () => {
               </button>
             ))}
             <div className="pt-2">
-              <Button variant="hero" size="sm" className="w-full">
-                Get in Touch
-              </Button>
+              <a 
+                href={personalInfo.social.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" size="sm" className="w-full">
+                  Get in Touch
+                </Button>
+              </a>
             </div>
           </div>
         </motion.div>
