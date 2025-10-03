@@ -264,7 +264,6 @@ export const projects: Project[] = [
   roleDescription:
     "Developed a backend system to support product and employee management with secure JWT authentication and authorization. Implemented RESTful APIs for CRUD operations, Excel export functionality, and image uploads. Built a structured project architecture with handlers, models, repositories, and routes for scalability and maintainability.",
   githubUrl: "https://github.com/BRYAN1309/e-commerce-lnt-camp-2025.git", 
-  liveUrl: "https://api.postman.com/collections/45400437-7d2ac694-51c9-4518-9bf1-1450a42cb07e?access_key=PMAT-01K31HVJJ7JCY381210MPHHW4G", 
   featured: false,
   image: goproject
 }
