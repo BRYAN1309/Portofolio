@@ -5,8 +5,9 @@ import { organizations } from '@/data/portfolio';
 
 const SimpleOrganizations: React.FC = () => {
   return (
-    <section id="organizations" className="py-20 bg-gradient-subtle">
+    <section id="organizations" className="py-20 bg-[#E6E6E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,14 +15,15 @@ const SimpleOrganizations: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#343434] mb-6">
             Community & Organizations
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-[#434343] max-w-2xl mx-auto">
             Contributing to the tech community and making a positive impact
           </p>
         </motion.div>
 
+        {/* Organizations List */}
         <div className="space-y-8">
           {organizations.map((org, index) => (
             <motion.div
@@ -31,13 +33,12 @@ const SimpleOrganizations: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -5 }}
-              className="gradient-card p-8 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300"
+              className="bg-white shadow-md p-8 rounded-xl border border-[#d9d9d9] hover:shadow-lg transition-all duration-300"
             >
               <div className="grid lg:grid-cols-3 gap-8 items-start">
                 {/* Organization Info */}
                 <div className="lg:col-span-1">
-                  {/* Organization Image */}
-                  <div className="w-40 h-40 rounded-lg mb-6 overflow-hidden border border-border/30 mx-auto lg:mx-0">
+                  <div className="w-40 h-40 rounded-lg mb-6 overflow-hidden border border-[#d9d9d9] mx-auto lg:mx-0">
                     {org.image ? (
                       <img 
                         src={org.image} 
@@ -45,33 +46,33 @@ const SimpleOrganizations: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-muted/20 flex items-center justify-center">
-                        <Users className="w-12 h-12 text-primary" />
+                      <div className="w-full h-full bg-[#E6E6E6] flex items-center justify-center">
+                        <Users className="w-12 h-12 text-[#343434]" />
                       </div>
                     )}
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2 text-center lg:text-left">
+                  <h3 className="text-xl font-bold mb-2 text-center lg:text-left text-[#343434]">
                     {org.name}
                   </h3>
                   
-                  <div className="text-primary font-medium mb-3 text-center lg:text-left">
+                  <div className="text-[#343434] font-medium mb-3 text-center lg:text-left">
                     {org.position}
                   </div>
 
-                  <div className="flex items-center justify-center lg:justify-start text-muted-foreground text-sm mb-4">
-                    <Calendar className="w-4 h-4 mr-2" />
+                  <div className="flex items-center justify-center lg:justify-start text-[#434343] text-sm mb-4">
+                    <Calendar className="w-4 h-4 mr-2 text-[#343434]" />
                     {org.duration}
                   </div>
                 </div>
 
                 {/* Description and Achievements */}
                 <div className="lg:col-span-2">
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-[#434343] leading-relaxed mb-6">
                     {org.description}
                   </p>
 
-                  <h4 className="text-lg font-semibold mb-4">Key Achievements</h4>
+                  <h4 className="text-lg font-semibold mb-4 text-[#343434]">Key Achievements</h4>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {org.achievements.map((achievement, achievementIndex) => (
                       <motion.div
@@ -80,10 +81,10 @@ const SimpleOrganizations: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: achievementIndex * 0.1 }}
-                        className="flex items-start gap-3 p-3 bg-surface-elevated rounded-lg"
+                        className="flex items-start gap-3 p-3 bg-[#343434] rounded-lg"
                       >
-                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-foreground">{achievement}</span>
+                        <CheckCircle className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-white">{achievement}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -101,9 +102,9 @@ const SimpleOrganizations: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16"
         >
-          <div className="gradient-card p-8 rounded-xl border border-border/50 text-center max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Community Impact</h3>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+          <div className="bg-white shadow-md p-8 rounded-xl border border-[#d9d9d9] text-center max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4 text-[#343434]">Community Impact</h3>
+            <p className="text-[#434343] leading-relaxed mb-8">
               I believe in giving back to the tech community that has given me so much. 
               Through organizing events, contributing to open source, and mentoring others, 
               I strive to make technology more accessible and inclusive for everyone.
@@ -111,20 +112,20 @@ const SimpleOrganizations: React.FC = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">500+</div>
-                <div className="text-muted-foreground text-sm">Community Members</div>
+                <div className="text-3xl font-bold text-[#343434]">500+</div>
+                <div className="text-[#434343] text-sm">Community Members</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">20+</div>
-                <div className="text-muted-foreground text-sm">Events Organized</div>
+                <div className="text-3xl font-bold text-[#343434]">20+</div>
+                <div className="text-[#434343] text-sm">Events Organized</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">15+</div>
-                <div className="text-muted-foreground text-sm">Open Source Projects</div>
+                <div className="text-3xl font-bold text-[#343434]">15+</div>
+                <div className="text-[#434343] text-sm">Open Source Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-muted-foreground text-sm">Developers Mentored</div>
+                <div className="text-3xl font-bold text-[#343434]">50+</div>
+                <div className="text-[#434343] text-sm">Developers Mentored</div>
               </div>
             </div>
           </div>

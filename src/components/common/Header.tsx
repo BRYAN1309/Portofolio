@@ -39,11 +39,12 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-md border-b border-border' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      style={{
+        backgroundColor: isScrolled ? 'rgba(230, 230, 230, 0.8)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(12px)' : 'none',
+        borderBottom: isScrolled ? '1px solid rgba(192, 192, 192, 0.3)' : 'none'
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -57,16 +58,26 @@ const Header: React.FC = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 ">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ y: -2 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
+                className="transition-colors duration-200 relative group"
+                style={{ color: '#343434', opacity: 0.7 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = '0.7';
+                }}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span 
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
+                  style={{ backgroundColor: '#343434' }}
+                ></span>
               </motion.button>
             ))}
           </nav>
@@ -86,8 +97,15 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg text-foreground hover:bg-surface-elevated transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors"
+            style={{ color: '#343434' }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(192, 192, 192, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -100,14 +118,24 @@ const Header: React.FC = () => {
             opacity: isMobileMenuOpen ? 1 : 0,
             height: isMobileMenuOpen ? 'auto' : 0
           }}
-          className="md:hidden overflow-hidden bg-surface-elevated rounded-lg mt-2 mb-4"
+          className="md:hidden overflow-hidden rounded-lg mt-2 mb-4"
+          style={{ backgroundColor: 'rgba(192, 192, 192, 0.4)' }}
         >
           <div className="px-4 py-2 space-y-2">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-surface transition-colors duration-200 rounded-md"
+                className="block w-full text-left px-4 py-3 transition-colors duration-200 rounded-md"
+                style={{ color: '#343434', opacity: 0.7 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                  e.currentTarget.style.backgroundColor = 'rgba(230, 230, 230, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = '0.7';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
               >
                 {item.name}
               </button>

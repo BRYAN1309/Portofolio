@@ -15,19 +15,39 @@ const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-primary text-primary-foreground hover:bg-primary-glow shadow-lg hover:shadow-xl",
-    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    outline: "border border-border text-foreground hover:bg-surface-elevated",
-    hero: "gradient-hero text-primary-foreground hover:shadow-2xl hover:scale-105 glow-effect"
+    primary: "text-white shadow-lg hover:shadow-xl",
+    secondary: "text-white hover:opacity-90",
+    outline: "border-2 hover:shadow-md",
+    hero: "text-white hover:shadow-2xl hover:scale-105"
   };
   
   const sizes = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg"
+  };
+
+  const variantStyles = {
+    primary: {
+      backgroundColor: '#343434',
+      borderColor: '#343434'
+    },
+    secondary: {
+      backgroundColor: '#C0C0C0',
+      borderColor: '#C0C0C0'
+    },
+    outline: {
+      backgroundColor: 'transparent',
+      borderColor: '#343434',
+      color: '#343434'
+    },
+    hero: {
+      background: 'linear-gradient(135deg, #343434 0%, #505050 100%)',
+      borderColor: 'transparent'
+    }
   };
 
   return (
@@ -40,6 +60,10 @@ const Button: React.FC<ButtonProps> = ({
         sizes[size],
         className
       )}
+      style={{
+        ...variantStyles[variant],
+        ...(props.style || {})
+      }}
       {...props}
     >
       {children}

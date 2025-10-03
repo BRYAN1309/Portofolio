@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Star, User, ImageIcon } from 'lucide-react';
-import Button from '../common/Button';
+import { ExternalLink, Github, Star, User, ImageIcon, Sparkles } from 'lucide-react';
+import Button from '@/components/common/Button';
 import { projects } from '@/data/portfolio';
 
 const SimpleProjects: React.FC = () => {
@@ -16,23 +16,23 @@ const SimpleProjects: React.FC = () => {
   const ProjectImage: React.FC<{ project: typeof projects[0] }> = ({ project }) => {
     if (!project.image || imageErrors[project.id]) {
       return (
-        <div className="w-full h-80 bg-gradient-to-br from-primary/5 to-primary/20 rounded-lg mb-6 flex items-center justify-center border border-border/30">
+        <div className="w-full h-80 bg-gradient-to-br from-[#D0D0D0] to-[#C0C0C0] rounded-xl mb-6 flex items-center justify-center border-2 border-[#C8C8C8] shadow-inner">
           <div className="text-center">
-            <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
-              <ImageIcon className="w-8 h-8 text-primary" />
+            <div className="w-20 h-20 bg-white/50 backdrop-blur-sm rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg">
+              <ImageIcon className="w-10 h-10 text-[#343434]" />
             </div>
-            <p className="text-muted-foreground text-sm">Project Preview</p>
+            <p className="text-[#343434] text-sm font-medium">Project Preview</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div className="w-full h-80 rounded-lg mb-6 overflow-hidden border border-border/30">
+      <div className="w-full h-80 rounded-xl mb-6 overflow-hidden border-2 border-[#C8C8C8] shadow-lg">
         <img
           src={project.image}
           alt={`${project.title} preview`}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
           onError={() => handleImageError(project.id)}
         />
       </div>
@@ -40,25 +40,59 @@ const SimpleProjects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 bg-[#E6E6E6] relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute w-96 h-96 bg-[#434343] rounded-full opacity-5 blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          style={{ top: '10%', left: '10%' }}
+        />
+        <motion.div
+          className="absolute w-96 h-96 bg-[#434343] rounded-full opacity-5 blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          style={{ bottom: '10%', right: '10%' }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full mb-6 shadow-md">
+            <Sparkles className="w-4 h-4 text-[#343434]" />
+            <span className="text-sm font-semibold text-[#343434]">Portfolio</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#343434] mb-6">
             Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-[#505050] max-w-2xl mx-auto leading-relaxed">
             A showcase of my best work and personal projects
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -66,33 +100,35 @@ const SimpleProjects: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+              whileHover={{ y: -12 }}
+              className="bg-white p-8 rounded-2xl border-2 border-[#D0D0D0] hover:border-[#343434] hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 text-primary fill-primary" />
-                  <span className="text-primary text-sm font-medium">Featured</span>
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#343434] rounded-lg shadow-md">
+                  <Star className="w-4 h-4 text-white fill-white" />
+                  <span className="text-white text-sm font-semibold">Featured</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   {project.githubUrl && (
                     <motion.a
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.95 }}
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-surface-elevated transition-colors"
+                      className="p-2.5 rounded-xl text-[#343434] hover:text-white hover:bg-[#343434] transition-all duration-300 shadow-md"
                     >
                       <Github className="w-5 h-5" />
                     </motion.a>
                   )}
                   {project.liveUrl && (
                     <motion.a
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.95 }}
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-surface-elevated transition-colors"
+                      className="p-2.5 rounded-xl text-[#343434] hover:text-white hover:bg-[#343434] transition-all duration-300 shadow-md"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </motion.a>
@@ -100,36 +136,37 @@ const SimpleProjects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Project Image */}
               <ProjectImage project={project} />
 
-              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-[#343434] group-hover:text-[#434343] transition-colors">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-[#505050] mb-6 leading-relaxed text-base">
                 {project.description}
               </p>
 
               {/* My Roles */}
-              <div className="mb-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <User className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-foreground">My Roles</span>
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="p-1.5 bg-[#343434] rounded-lg">
+                    <User className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-[#343434]">My Roles</span>
                 </div>
-                <div className="bg-secondary/20 rounded-lg p-3 border border-border/20 mb-3">
-                  <div className="flex flex-wrap gap-2 mb-2">
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#D8D8D8] shadow-sm">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {project.roles.map((role) => (
                       <span
                         key={role}
-                        className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                        className="px-3 py-1.5 bg-white text-[#343434] rounded-lg text-sm font-medium border border-[#D0D0D0] shadow-sm"
                       >
                         {role}
                       </span>
                     ))}
                   </div>
                   {project.roleDescription && (
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-[#505050] leading-relaxed">
                       {project.roleDescription}
                     </p>
                   )}
@@ -137,12 +174,12 @@ const SimpleProjects: React.FC = () => {
               </div>
 
               {/* Technologies */}
-              <div className="mb-6">
+              <div className="mb-8">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                      className="px-4 py-2 bg-[#343434] text-white rounded-lg text-sm font-medium shadow-md hover:bg-[#434343] transition-colors"
                     >
                       {tech}
                     </span>
@@ -152,7 +189,7 @@ const SimpleProjects: React.FC = () => {
 
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block">
-                  <Button variant="primary" size="sm" className="w-full">
+                  <Button variant="primary" size="md" className="w-full group-hover:shadow-xl">
                     View Project
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
@@ -165,8 +202,8 @@ const SimpleProjects: React.FC = () => {
         {/* Other Projects */}
         {otherProjects.length > 0 && (
           <div>
-            <h3 className="text-2xl font-bold text-center mb-8">Other Projects</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h3 className="text-3xl font-bold text-center mb-12 text-[#343434]">Other Projects</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -174,32 +211,34 @@ const SimpleProjects: React.FC = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+                  whileHover={{ y: -8 }}
+                  className="bg-white p-6 rounded-xl border-2 border-[#D0D0D0] hover:border-[#343434] hover:shadow-xl transition-all duration-500 group"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <h4 className="text-lg font-bold group-hover:text-primary transition-colors">
+                    <h4 className="text-lg font-bold text-[#343434] group-hover:text-[#434343] transition-colors">
                       {project.title}
                     </h4>
                     <div className="flex items-center gap-2">
                       {project.githubUrl && (
                         <motion.a
-                          whileHover={{ scale: 1.1 }}
+                          whileHover={{ scale: 1.15 }}
+                          whileTap={{ scale: 0.95 }}
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1 rounded text-muted-foreground hover:text-foreground transition-colors"
+                          className="p-1.5 rounded-lg text-[#343434] hover:text-white hover:bg-[#343434] transition-all duration-300"
                         >
                           <Github className="w-4 h-4" />
                         </motion.a>
                       )}
                       {project.liveUrl && (
                         <motion.a
-                          whileHover={{ scale: 1.1 }}
+                          whileHover={{ scale: 1.15 }}
+                          whileTap={{ scale: 0.95 }}
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1 rounded text-muted-foreground hover:text-foreground transition-colors"
+                          className="p-1.5 rounded-lg text-[#343434] hover:text-white hover:bg-[#343434] transition-all duration-300"
                         >
                           <ExternalLink className="w-4 h-4" />
                         </motion.a>
@@ -207,41 +246,42 @@ const SimpleProjects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Larger Project Image for Other Projects */}
                   {project.image && !imageErrors[project.id] && (
-                    <div className="w-full h-64 rounded-lg mb-4 overflow-hidden border border-border/30">
+                    <div className="w-full h-48 rounded-lg mb-4 overflow-hidden border border-[#D0D0D0] shadow-md">
                       <img
                         src={project.image}
                         alt={`${project.title} preview`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                         onError={() => handleImageError(project.id)}
                       />
                     </div>
                   )}
                   
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  <p className="text-[#505050] mb-4 text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* My Roles - Compact version */}
-                  <div className="mb-3">
-                    <div className="flex items-center gap-1 mb-2">
-                      <User className="w-3 h-3 text-primary" />
-                      <span className="text-xs font-medium text-foreground">Roles</span>
+                  <div className="mb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="p-1 bg-[#343434] rounded">
+                        <User className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-xs font-semibold text-[#343434]">Roles</span>
                     </div>
-                    <div className="bg-secondary/15 rounded-md p-2 border border-border/15">
-                      <div className="flex flex-wrap gap-1 mb-2">
+                    <div className="bg-[#F5F5F5] rounded-lg p-3 border border-[#D8D8D8]">
+                      <div className="flex flex-wrap gap-1.5 mb-2">
                         {project.roles.map((role) => (
                           <span
                             key={role}
-                            className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs"
+                            className="px-2 py-1 bg-white text-[#343434] rounded text-xs font-medium border border-[#D0D0D0]"
                           >
                             {role}
                           </span>
                         ))}
                       </div>
                       {project.roleDescription && (
-                        <p className="text-xs text-muted-foreground leading-tight line-clamp-3">
+                        <p className="text-xs text-[#505050] leading-tight line-clamp-2">
                           {project.roleDescription}
                         </p>
                       )}
@@ -249,17 +289,17 @@ const SimpleProjects: React.FC = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-primary/10 text-primary rounded text-xs"
+                        className="px-2 py-1 bg-[#343434] text-white rounded text-xs font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 text-muted-foreground text-xs">
+                      <span className="px-2 py-1 text-[#505050] text-xs font-medium">
                         +{project.technologies.length - 3} more
                       </span>
                     )}

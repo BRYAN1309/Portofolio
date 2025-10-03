@@ -8,6 +8,7 @@ import foodai from "@/assets/foodai.png"
 import pokemonapp from "@/assets/pokemon.png"
 import sertifFe from "@/assets/FE.png"
 import sertiftechno from "@/assets/techno.png"
+import sertifCamp from "@/assets/lntcamp.jpg"
 import sertifBe from"@/assets/BE - Bryan Thanaya (1)-1.png"
 import sertifBatak from "@/assets/Sertifikat Lomba Website Aksara Batak-pages-56-1.png"
 import sertifPGRI from "@/assets/Sertifikat Peserta BRYAN THANAYA (1)-1.png"
@@ -226,8 +227,8 @@ export const projects: Project[] = [
   roles: ["Fullstack Developer"],
   roleDescription:
     "Built the application as a solo developer from the ground up using React. Designed a responsive UI, implemented search and detail views, and integrated PokéAPI using fetch() and async JavaScript. Managed state and props across reusable components, optimized code for performance, and deployed to Vercel for public access. Learned React fundamentals, API consumption, modular frontend design, and foundations of fullstack development.",
-  githubUrl: "https://github.com/BRYAN1309/Pokemon-app.git", // ganti sesuai repo kamu
-  liveUrl: "https://pokemon-app-m719.vercel.app/", // ganti sesuai deployment kamu
+  githubUrl: "https://github.com/BRYAN1309/Pokemon-app.git", 
+  liveUrl: "https://pokemon-app-m719.vercel.app/", 
   featured: false,
   image: pokemonapp
   },
@@ -240,8 +241,8 @@ export const projects: Project[] = [
   roles: ["Fullstack Developer"],
   roleDescription:
     "Developed the entire system with PHP backend, MySQL database, and Tailwind CSS frontend. Implemented CRUD functionality for book records, integrated search and filter features, and designed a responsive interface. Ensured database integrity and smooth user interactions through optimized queries and clean UI design.",
-  githubUrl: "https://github.com/BRYAN1309/LibraryManagementSystem.git", // ganti dengan repo kamu
-  liveUrl: "", // isi kalau ada demo online
+  githubUrl: "https://github.com/BRYAN1309/LibraryManagementSystem.git", 
+  liveUrl: "", 
   featured: false,
 }
 

@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import Particles from 'react-tsparticles';
+import { loadSlim } from 'tsparticles-slim';
+import type { Container, Engine } from 'tsparticles-engine';
 import Button from '../common/Button';
 import { personalInfo } from '@/data/portfolio';
 
@@ -54,13 +57,96 @@ const SimpleHero: React.FC = () => {
     }
   };
 
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+    console.log('Particles loaded', container);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-      </div>
+      {/* TSParticles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        className="absolute inset-0"
+        options={{
+          fullScreen: {
+            enable: false,
+            zIndex: 0
+          },
+          background: {
+            color: {
+              value: '#E6E6E6',
+            },
+          },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: 'push',
+              },
+              onHover: {
+                enable: true,
+                mode: 'repulse',
+              },
+              resize: true,
+            },
+            modes: {
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: '#C0C0C0',
+            },
+            links: {
+              color: '#343434',
+              distance: 150,
+              enable: true,
+              opacity: 0.3,
+              width: 1,
+            },
+            move: {
+              direction: 'none',
+              enable: true,
+              outModes: {
+                default: 'bounce',
+              },
+              random: false,
+              speed: 2,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: 'circle',
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
+          },
+          detectRetina: true,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
@@ -70,7 +156,7 @@ const SimpleHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: 'rgba(192, 192, 192, 0.5)', color: '#343434' }}>
               👋 Welcome to my portfolio
             </span>
           </motion.div>
@@ -80,9 +166,10 @@ const SimpleHero: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            style={{ color: '#343434' }}
           >
             Hi, I'm{' '}
-            <span className="text-gradient">
+              <span style={{ color: '#343434' }}>
               {displayedText}
               <span className="animate-pulse">|</span>
             </span>
@@ -92,7 +179,8 @@ const SimpleHero: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-3xl mx-auto"
+            style={{ color: '#343434', opacity: 0.9 }}
           >
             {personalInfo.tagline}
           </motion.p>
@@ -101,7 +189,8 @@ const SimpleHero: React.FC = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg mb-12 max-w-2xl mx-auto leading-relaxed"
+            style={{ color: '#343434', opacity: 0.8 }}
           >
             {personalInfo.bio}
           </motion.p>
@@ -134,7 +223,8 @@ const SimpleHero: React.FC = () => {
               href={personalInfo.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-surface-elevated rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="p-3 rounded-lg transition-colors"
+              style={{ backgroundColor: 'rgba(192, 192, 192, 0.5)', color: '#343434' }}
             >
               <Github className="w-6 h-6" />
             </motion.a>
@@ -144,7 +234,8 @@ const SimpleHero: React.FC = () => {
               href={personalInfo.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-surface-elevated rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="p-3 rounded-lg transition-colors"
+              style={{ backgroundColor: 'rgba(192, 192, 192, 0.5)', color: '#343434' }}
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
@@ -152,7 +243,8 @@ const SimpleHero: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               href={`mailto:${personalInfo.email}`}
-              className="p-3 bg-surface-elevated rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="p-3 rounded-lg transition-colors"
+              style={{ backgroundColor: 'rgba(192, 192, 192, 0.5)', color: '#343434' }}
             >
               <Mail className="w-6 h-6" />
             </motion.a>
@@ -165,10 +257,10 @@ const SimpleHero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
       >
-        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-bounce"></div>
+        <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: '#343434' }}>
+          <div className="w-1 h-3 rounded-full mt-2 animate-bounce" style={{ backgroundColor: '#343434' }}></div>
         </div>
       </motion.div>
     </section>

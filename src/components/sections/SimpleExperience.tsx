@@ -1,88 +1,159 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Calendar, Code } from 'lucide-react';
-import { experiences } from '@/data/portfolio';
+import { Building2, Calendar, Code, ArrowRight } from 'lucide-react';
 
-const SimpleExperience: React.FC = () => {
+// Sample data - replace with your actual data
+import { Experience, experiences } from '@/data/portfolio';
+
+const SimpleExperience = () => {
   return (
-    <section id="experience" className="py-20 bg-gradient-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#E6E6E6' }}>
+      {/* Subtle animated background shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.03, 0.05, 0.03],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute -top-20 -left-20 w-96 h-96 rounded-full"
+          style={{ backgroundColor: '#434343' }}
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.03, 0.06, 0.03],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full"
+          style={{ backgroundColor: '#434343' }}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
+            <span className="px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: '#434343', color: '#E6E6E6' }}>
+              Professional Journey
+            </span>
+          </motion.div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#343434' }}>
             Work Experience
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My professional journey building exceptional digital experiences
+          <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#5A5A5A' }}>
+            Building exceptional digital experiences through innovation and dedication
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+          {/* Timeline Line - Hidden on mobile, visible on desktop */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#434343', opacity: 0.2 }}></div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {experiences.map((experience, index) => (
               <motion.div
                 key={experience.id}
-                initial={{ x: -60, opacity: 0 }}
+                initial={{ x: index % 2 === 0 ? -60 : 60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+                className="relative"
               >
-                {/* Timeline Node */}
-                <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 w-8 h-8 bg-primary rounded-full border-4 border-background flex items-center justify-center">
-                  <Building2 className="w-4 h-4 text-primary-foreground" />
-                </div>
+                <div className={`flex flex-col md:flex-row items-start gap-8 ${
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}>
+                  {/* Timeline Node */}
+                  <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 items-center justify-center z-10" style={{ backgroundColor: '#434343', borderColor: '#E6E6E6' }}>
+                    <Building2 className="w-5 h-5" style={{ color: '#E6E6E6' }} />
+                  </div>
 
-                {/* Content */}
-                <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    className="gradient-card p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <h3 className="text-xl font-bold text-foreground">
-                        {experience.position}
-                      </h3>
-                      <div className="flex items-center text-primary text-sm mt-2 sm:mt-0">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {experience.duration}
-                      </div>
-                    </div>
+                  {/* Content Card */}
+                  <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                    <motion.div
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                      style={{ backgroundColor: 'white', border: '1px solid #D0D0D0' }}
+                    >
+                      {/* Decorative corner accent */}
+                      <div className="absolute top-0 right-0 w-20 h-20 rounded-bl-full opacity-10" style={{ backgroundColor: '#434343' }}></div>
+                      
+                      <div className="relative">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-5 gap-3">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-2" style={{ color: '#343434' }}>
+                              {experience.position}
+                            </h3>
+                            <h4 className="text-lg font-semibold flex items-center gap-2" style={{ color: '#5A5A5A' }}>
+                              <Building2 className="w-4 h-4" />
+                              {experience.company}
+                            </h4>
+                          </div>
+                          <div className="flex items-center px-4 py-2 rounded-lg" style={{ backgroundColor: '#F5F5F5' }}>
+                            <Calendar className="w-4 h-4 mr-2" style={{ color: '#434343' }} />
+                            <span className="text-sm font-medium" style={{ color: '#434343' }}>
+                              {experience.duration}
+                            </span>
+                          </div>
+                        </div>
 
-                    <h4 className="text-lg font-semibold text-muted-foreground mb-4">
-                      {experience.company}
-                    </h4>
+                        <p className="mb-6 leading-relaxed text-base" style={{ color: '#5A5A5A' }}>
+                          {experience.description}
+                        </p>
 
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {experience.description}
-                    </p>
+                        <div className="flex flex-wrap gap-2">
+                          {experience.technologies.map((tech) => (
+                            <motion.span
+                              key={tech}
+                              whileHover={{ scale: 1.05 }}
+                              className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                              style={{ 
+                                backgroundColor: '#434343',
+                                color: '#E6E6E6'
+                              }}
+                            >
+                              <Code className="w-3 h-3 mr-2" />
+                              {tech}
+                            </motion.span>
+                          ))}
+                        </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                        {/* Hover Arrow Indicator */}
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          whileHover={{ opacity: 1, x: 0 }}
+                          className="absolute -right-4 top-1/2 transform -translate-y-1/2 hidden lg:block"
                         >
-                          <Code className="w-3 h-3 mr-1" />
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
+                          <ArrowRight className="w-6 h-6" style={{ color: '#434343' }} />
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </div>
 
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block flex-1"></div>
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block flex-1"></div>
+                </div>
               </motion.div>
             ))}
           </div>
