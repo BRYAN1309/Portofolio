@@ -133,7 +133,7 @@ export const projects: Project[] = [
     description:
       "Web-based platform designed to improve tax transparency and public participation in Indonesia. It leverages blockchain technology, smart contracts, and wallet integration (MetaMask) to ensure transparency, immutability, and accountability in tax-related transactions.",
     technologies: ["Go", "Supabase", "Ethereum (Testnet)", "Smart Contracts", "REST API", "MetaMask", "JWT", "React + Vite", "Typescript"],
-    roles: ["Backend Engineer"],
+    roles: ["Backend Developer"],
     roleDescription:
       "Designed hybrid data architecture (Supabase + blockchain), implemented Ethereum smart contracts, integrated MetaMask authentication, built 20+ REST APIs, and developed transaction validation and role-based access systems. Ensured scalability and security for daily transactions.",
     githubUrl: "https://github.com/BRYAN1309/Hology-Software-Development",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     description:
       "Digital education platform to preserve Batak culture through a modern, interactive LMS. Features Batak language learning modules, folk tales, history, quizzes, final exams, and mini-games.",
     technologies: ["React + Vite", "Typescript", "Python", "PostgreSQL", "REST API", "JWT", "Flask"],
-    roles: ["Backend Engineer"],
+    roles: ["Backend Developer"],
     roleDescription:
       "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
     githubUrl: "https://github.com/BRYAN1309/HorasEdu",
