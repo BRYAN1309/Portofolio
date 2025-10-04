@@ -280,10 +280,9 @@ const SimpleProjects: React.FC = () => {
           </div>
         )}
 
-        {/* ✅ NEW GOOGLE DRIVE BUTTON AT BOTTOM */}
         <div className="flex justify-center mt-16">
           <a
-            href="https://drive.google.com/your-link-here"
+            href="https://drive.google.com/file/d/1cHNjfZ02qOt86bUe_sJrYF3zcoMya6fg/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >

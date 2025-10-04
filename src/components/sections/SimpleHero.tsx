@@ -116,7 +116,11 @@ const SimpleHero: React.FC = () => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
-            <Button variant="outline" size="lg">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => window.open(personalInfo.cv, "_blank")}
+            >
               <Download className="mr-2 w-5 h-5" />
               Download CV
             </Button>
