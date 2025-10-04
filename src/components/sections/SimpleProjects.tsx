@@ -40,37 +40,7 @@ const SimpleProjects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-[#E6E6E6] relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute w-96 h-96 bg-[#434343] rounded-full opacity-5 blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{ top: '10%', left: '10%' }}
-        />
-        <motion.div
-          className="absolute w-96 h-96 bg-[#434343] rounded-full opacity-5 blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{ bottom: '10%', right: '10%' }}
-        />
-      </div>
-
+    <section id="projects" className="py-24 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +111,7 @@ const SimpleProjects: React.FC = () => {
               <h3 className="text-2xl font-bold mb-4 text-[#343434] group-hover:text-[#434343] transition-colors">
                 {project.title}
               </h3>
-              
+
               <p className="text-[#505050] mb-6 leading-relaxed text-base">
                 {project.description}
               </p>
@@ -203,7 +173,7 @@ const SimpleProjects: React.FC = () => {
         {otherProjects.length > 0 && (
           <div>
             <h3 className="text-3xl font-bold text-center mb-12 text-[#343434]">Other Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {otherProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -256,7 +226,7 @@ const SimpleProjects: React.FC = () => {
                       />
                     </div>
                   )}
-                  
+
                   <p className="text-[#505050] mb-4 text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
@@ -309,6 +279,20 @@ const SimpleProjects: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* ✅ NEW GOOGLE DRIVE BUTTON AT BOTTOM */}
+        <div className="flex justify-center mt-16">
+          <a
+            href="https://drive.google.com/your-link-here"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="primary" size="lg" className="px-10">
+              View Full Portfolio on Google Drive
+              <ExternalLink className="w-5 h-5 ml-2" />
+            </Button>
+          </a>
+        </div>
       </div>
     </section>
   );

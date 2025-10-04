@@ -5,7 +5,7 @@ import { organizations } from '@/data/portfolio';
 
 const SimpleOrganizations: React.FC = () => {
   return (
-    <section id="organizations" className="py-20 bg-[#E6E6E6]">
+    <section id="organizations" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

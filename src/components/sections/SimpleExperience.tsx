@@ -7,38 +7,7 @@ import { experiences } from '@/data/portfolio';
 
 const SimpleExperience = () => {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#E6E6E6' }}>
-      {/* Subtle animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.03, 0.05, 0.03],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -top-20 -left-20 w-96 h-96 rounded-full"
-          style={{ backgroundColor: '#434343' }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.03, 0.06, 0.03],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full"
-          style={{ backgroundColor: '#434343' }}
-        />
-      </div>
-
+    <section id="experience" className="py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,11 +24,11 @@ const SimpleExperience = () => {
             className="inline-block mb-4"
           >
             <span className="px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: '#434343', color: '#E6E6E6' }}>
-              Professional Journey
+              Software Engineer Journey
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#343434' }}>
-            Work Experience
+            Software Engineer Experience
           </h2>
           <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#5A5A5A' }}>
             Building exceptional digital experiences through innovation and dedication
@@ -96,8 +65,6 @@ const SimpleExperience = () => {
                       className="relative p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
                       style={{ backgroundColor: 'white', border: '1px solid #D0D0D0' }}
                     >
-                      {/* Decorative corner accent */}
-                      <div className="absolute top-0 right-0 w-20 h-20 rounded-bl-full opacity-10" style={{ backgroundColor: '#434343' }}></div>
                       
                       <div className="relative">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-5 gap-3">

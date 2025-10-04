@@ -14,7 +14,7 @@ const SimpleCertificates = () => {
     <section
       id="certificates"
       className="py-20"
-      style={{ backgroundColor: "#E6E6E6", color: "#343434" }}
+      style={{ color: "#343434" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}

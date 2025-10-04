@@ -33,7 +33,7 @@ const SimpleSkills = () => {
   const duplicatedStack = [...techStack, ...techStack];
 
   return (
-    <section id="skills" className="py-20 overflow-hidden" style={{ backgroundColor: '#E6E6E6' }}>
+    <section id="skills" className="py-20 overflow-hidden" >
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}

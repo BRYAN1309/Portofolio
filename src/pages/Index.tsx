@@ -9,10 +9,14 @@ import SimpleCertificates from "@/components/sections/SimpleCertificates";
 import SimpleOrganizations from "@/components/sections/SimpleOrganizations";
 import Footer from "@/components/sections/Footer";
 import LoadingScreen from "@/components/common/LoadingScreen";
+import AnimatedBackground from "@/components/common/AnimatedBackground"; // ✅ Add this
 
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#E6E6E6]">
+      {/* ✅ Animated background layer */}
+      <AnimatedBackground />
+      
       {/* ✅ Loading screen on top */}
       <LoadingScreen />
 
