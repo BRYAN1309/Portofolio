@@ -363,12 +363,12 @@ export const certificates: Certificate[] = [
   },
    {
   id: 9,
-  name: "The 2024 ICPC Asia Jakarta - Indonesia National Contest",
-  issuer: "International Collegiate Programming Contest (ICPC)",
-  date: "26 - 27 October 2024",
-  credentialId: "Honorable Mention",
+  name: "LnT Camp 2025 Golang",
+  issuer: "Bina Nusantara Computer Club Bandung",
+  date: "10 Juli - 7 Augustus 2025",
+  credentialId: "participant",
   image: sertifcamp,
-  certificateUrl: "https://drive.google.com/file/d/1-I-MKY9UOiCqKEkqv5sDwLj-Eve1V6Gv/view?usp=drive_link" 
+  certificateUrl: "https://drive.google.com/file/d/1qdJY82d4gbyb4fD3tOLmXeZSzpYs41_9/view?usp=drive_link" 
   }
 ];
 
