@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.svg"
+import infest from "@/assets/infest.png"
 import bukapajak from  "@/assets/BukaPajak.png"
 import nextpath from "@/assets/nextPath.png"
 import signtalk from "@/assets/SignTalk.png"
@@ -171,7 +172,32 @@ export const projects: Project[] = [
     image: bukapajak
   },
   {
-    id: 2,
+  id: 2,
+  title: "TemanUsaha",
+  description:
+    "AI-powered micro-investment and analytics platform that connects MSMEs (UMKM) with retail and institutional investors through micro-equity and revenue-sharing mechanisms. It provides AI-based credit scoring, fraud detection, and automated repayment to create transparent, inclusive, and sustainable financing for MSMEs in Indonesia’s 3T regions.",
+  technologies: [
+    "React",
+    "Vite",
+    "TailwindCSS",
+    "TypeScript",
+    "Flask",
+    "JWT",
+    "Python",
+    "Supabase",
+    "TensorFlow",
+    "Scikit-learn",
+  ],
+  roles: ["Backend Developer"],
+  roleDescription:
+     "Designed REST API architecture, database schema, and project structure for scalable backend and frontend services. Integrated backend with frontend and AI modules (credit scoring & fraud detection),  deployed the system on Railway, Vercel and Cpanel for final version ensuring reliability, scalability",
+  githubUrl: "https://github.com/BRYAN1309/Portofolio.git",
+  liveUrl: "https://drive.google.com/file/d/1QwZbKIVAF_o0UM9Y4mczlNSe4hW_Un5x/view?usp=sharing",
+  featured: true,
+  image: infest
+  },
+  {
+    id: 3,
     title: "NextPath",
     description:
       "AI-powered career recommendation platform for students, fresh graduates, and job seekers. It provides personalized career paths, goal tracking, and curated articles on industry insights and skill-building.",
@@ -185,7 +211,7 @@ export const projects: Project[] = [
     image: nextpath
   },
   {
-    id: 3,
+    id: 4,
     title: "Horasedu",
     description:
       "Digital education platform to preserve Batak culture through a modern, interactive LMS. Features Batak language learning modules, folk tales, history, quizzes, final exams, and mini-games.",
@@ -199,7 +225,7 @@ export const projects: Project[] = [
     image: horasedu
   },
   {
-    id: 4,
+    id: 5,
     title: "SignTalk",
     description:
       "AI-powered video call platform that translates sign language into text and speech in real time, bridging communication gaps for individuals with hearing or speech disabilities.",
@@ -213,7 +239,7 @@ export const projects: Project[] = [
     image: signtalk
   },
   {
-    id: 5,
+    id: 6,
     title: "Compwaste",
     description:
       "Food waste management app enabling restaurants to redistribute organic waste to farmers or compost producers. Supports waste classification, location matching, and secure transactions.",
@@ -227,7 +253,7 @@ export const projects: Project[] = [
     image: compwaste
   },
   {
-  id: 6,
+  id: 7,
   title: "FoodyAI",
   description:
     "AI-powered nutrition detection platform that identifies Indonesian food from images and provides detailed nutritional insights. Built to raise awareness of unhealthy eating habits and help users make better dietary choices while still enjoying traditional cuisine.",
@@ -249,7 +275,7 @@ export const projects: Project[] = [
   image: foodai
   },
   {
-  id: 7,
+  id: 8,
   title: "Pokeman Web",
   description:
     "An interactive web application that displays detailed data about various Pokémon, including abilities, base stats, and types. Users can browse, search, and explore information fetched from the PokéAPI in a clean and responsive interface.",
@@ -263,7 +289,7 @@ export const projects: Project[] = [
   image: pokemonapp
   },
   {
-  id: 8,
+  id: 9,
   title: "Library Management System",
   description:
     "A web-based application for efficient library management, enabling CRUD operations on books and providing search and filter features. Built with a responsive and modern UI using Tailwind CSS.",
@@ -277,7 +303,7 @@ export const projects: Project[] = [
   image: libraryproject
   },
   {
-  id: 9,
+  id: 10,
   title: "Backend Management System",
   description:
     "A backend management system for handling products and employees with JWT-based authentication, built using Go and the Gin framework. Features include product and employee management, admin dashboard, and API landing page with product data exposure.",
