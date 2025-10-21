@@ -106,7 +106,7 @@ const SimpleOrganizations: React.FC = () => {
             <h3 className="text-2xl font-bold mb-4 text-[#343434]">Community Impact</h3>
             <p className="text-[#434343] leading-relaxed mb-8">
               I believe in giving back to the tech community that has given me so much. 
-              Through organizing events, contributing to open source, and mentoring others, 
+              Through organizing events, contributing to projects, and mentoring others, 
               I strive to make technology more accessible and inclusive for everyone.
             </p>
             
@@ -121,11 +121,11 @@ const SimpleOrganizations: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#343434]">15+</div>
-                <div className="text-[#434343] text-sm">Open Source Projects</div>
+                <div className="text-[#434343] text-sm"> Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#343434]">50+</div>
-                <div className="text-[#434343] text-sm">Developers Mentored</div>
+                <div className="text-3xl font-bold text-[#343434]">2</div>
+                <div className="text-[#434343] text-sm">Years of organizations Experience</div>
               </div>
             </div>
           </div>

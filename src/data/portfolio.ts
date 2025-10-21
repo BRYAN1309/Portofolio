@@ -68,16 +68,36 @@ export interface Organization {
 
 export const experiences: Experience[] = [
   {
-    id: 1,
-    company: "BNCC Elite Team – Online",
-    position: "Member",
-    duration: "Mar 2025 – Present",
-    description:
-      "Completed full-stack web development training covering React, HTML, CSS, JavaScript, and backend fundamentals. Built responsive, dynamic web apps aligned with software engineering best practices.",
-    technologies: ["React", "HTML", "CSS", "JavaScript", "Backend Fundamentals"],
+  id: 1,
+  company: "Hackathon INFEST XI 2025",
+  position: "🏆2nd Place Winner – TemanUsaha",
+  duration: "Oct 2025",
+  description:
+    "Developed TemanUsaha, an AI-powered micro-investment and analytics platform that connects MSMEs (UMKM) with retail and institutional investors through micro-equity and revenue-sharing mechanisms. The system integrates AI credit scoring, fraud detection, and automated repayment to ensure secure, transparent, and inclusive financing for MSMEs in Indonesia’s 3T regions.",
+  technologies: [
+    "React",
+    "Vite",
+    "TailwindCSS",
+    "TypeScript",
+    "Flask",
+    "Django",
+    "Python",
+    "Supabase",
+    "TensorFlow",
+    "Scikit-learn",
+  ],
   },
   {
     id: 2,
+    company: "Lomba Website Aksara Batak Domain .Id",
+    position: "Finalist",
+    duration: "Jul – Aug 2025",
+    description:
+      "Developed Horasedu, a digital education platform that preserves Batak culture through a modern, interactive approach. Features include LMS with quizzes and exams, interactive mini-games, chatbox, and cultural exploration modules.",
+    technologies: ["Python", "React", "LMS Development", "Interactive Games", "Digital Education", "Supabase", "Ai"],
+  },
+  {
+    id: 3,
     company: "FINDIT 2025 Hackathon – Universitas Gadjah Mada",
     position: "Semifinalist",
     duration: "Mar – Apr 2025",
@@ -86,7 +106,7 @@ export const experiences: Experience[] = [
     technologies: ["WebRTC", "AI", "React", "Next.js", "Real-time Communication", "React", "Python"],
   },
   {
-    id: 3,
+    id: 6,
     company: "LnT Camp – Bootcamp Golang",
     position: "Participant",
     duration: "Jul – Aug 2025",
@@ -103,7 +123,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     company: "Full-Stack Web Development Courses – Udemy (Online)",
     position: "Student",
     duration: "Feb 2025 – Jan 2025",
@@ -112,13 +132,22 @@ export const experiences: Experience[] = [
     technologies: ["React", "Next.js", "Redux", "API Integration", "Laravel", "Git", "Postman"],
   },
   {
-    id: 5,
+    id: 2,
     company: "Lomba Website Aksara Batak Domain .Id",
     position: "Finalist",
     duration: "Jul – Aug 2025",
     description:
       "Developed Horasedu, a digital education platform that preserves Batak culture through a modern, interactive approach. Features include LMS with quizzes and exams, interactive mini-games, chatbox, and cultural exploration modules.",
     technologies: ["Python", "React", "LMS Development", "Interactive Games", "Digital Education", "Supabase", "Ai"],
+  },
+  {
+    id: 4,
+    company: "BNCC Elite Team – Online",
+    position: "Member",
+    duration: "Mar 2025 – Sep 2025",
+    description:
+      "Completed full-stack web development training covering React, HTML, CSS, JavaScript, and backend fundamentals. Built responsive, dynamic web apps aligned with software engineering best practices.",
+    technologies: ["React", "HTML", "CSS", "JavaScript", "Backend Fundamentals"],
   },
 ];
 
