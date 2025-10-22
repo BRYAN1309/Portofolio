@@ -509,5 +509,5 @@ export const personalInfo = {
     github: "https://github.com/BRYAN1309",
     linkedin: "https://www.linkedin.com/in/bryan-thanaya/",
   },
-  cv: "https://drive.google.com/file/d/1PceNsIMTeLPqB30-k8oKhDLa3awNfUK6/view?usp=sharing"
+  cv: "https://drive.google.com/file/d/1SCy9_HFjnh9ahtNvX9lX00ENF-9_AZ3F/view?usp=sharing"
 };
