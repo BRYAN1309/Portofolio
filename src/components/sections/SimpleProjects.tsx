@@ -282,7 +282,7 @@ const SimpleProjects: React.FC = () => {
 
         <div className="flex justify-center mt-16">
           <a
-            href="https://drive.google.com/file/d/1cHNjfZ02qOt86bUe_sJrYF3zcoMya6fg/view?usp=sharing"
+            href="https://drive.google.com/file/d/1hTg_ikyBrTa3SecVeqRVsuqCrbISpGQ3/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
