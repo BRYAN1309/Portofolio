@@ -220,7 +220,7 @@ export const projects: Project[] = [
     roleDescription:
       "Designed and managed the database, built core logic for modules, quizzes, and mini-games, structured REST APIs for frontend-backend interaction, and integrated a chatbot assistant for interactive learning.",
     githubUrl: "https://github.com/BRYAN1309/HorasEdu",
-    liveUrl: "https://horasedu.example.com",
+    liveUrl: "https://drive.google.com/drive/folders/1wtSF8o-FKM-vx9IuZEA-jH8xWc3Ylu3G?usp=sharing",
     featured: true,
     image: horasedu
   },
